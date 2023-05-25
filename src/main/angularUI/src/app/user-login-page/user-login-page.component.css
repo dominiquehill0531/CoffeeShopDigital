@@ -1,0 +1,75 @@
+#container {
+    display: grid;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 80vh 10vh;
+  
+    grid-template-areas:
+  
+    "hd"
+    "log"
+    "ft"
+      ;
+  
+  }
+  
+  #header {
+  
+    grid-area: hd;
+    background-color: brown;
+    max-width: 100%;
+    }
+  
+    #homeBtn {
+      float: right;
+      margin: 20px;
+      margin-top: 35px;
+      padding: 10px;
+    }
+  
+    #box {
+  
+      grid-area: log;
+      margin: auto;
+  
+    }
+  
+  .user-login-style {
+  
+    border: 1px solid black;
+    width: 300px;
+    margin: 50px;
+    text-align: center;
+  
+  }
+  
+  #logo-style {
+  
+    margin-top: 10px;
+  
+  }
+  
+  #line-css {
+  
+    margin: 10px
+  
+  }
+  
+  #lostPwdStyle {
+  
+    color: blue;
+  }
+  
+  #signUpStyle {
+  
+    color: red;
+  }
+  
+  #footer {
+  
+    grid: ft;
+    background-color: brown;
+  
+  }

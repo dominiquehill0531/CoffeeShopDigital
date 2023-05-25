@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+html {
+  font-family: Arial;
+  font-size: 16px;
+  background: #5e42a6;
+}
+
+.sidebar {
+  position: fixed;
+  width: 15%;
+  height: 50vh;
+  background: clear;
+  font-size: 0.65em;
+}
+
+.nav {
+  position: relative;
+  margin: 0 25%;
+  text-align: center;
+  top: 50%;
+  font-size:x-large;
+  transform: translateY(-50%);
+  font-weight: bold;
+}
+
+.nav ul {
+  list-style: none;
+}
+
+body{
+  background-image: url("/assets/images/coffe-shop-background.jpg");
+  background-size: cover;
+  height: 2200px;
+}
+h1 {
+  font-size: 50px;
+  text-align: center;
+  color:black;
+  font-family: Goudy Old Style;
+}
+.submit {
+  text-align: right;
+}
+form{
+  text-align: right;
+}
+.menu{
+  height:1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px;
+  max-width: 1000px;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 10px;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 350px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin:5px;
+}
+
+.gallery::after {
+  content: "";
+  width: 350px;
+}
+
+.caption {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  
+}
+
+.container1 {
+  height: 100vh;
+}
+.about-us {
+  border: 2px solid black;
+  padding: 10px;
+  width: 200px;
+  height: 600px;
+  position: absolute;
+  bottom: 0;
+  right: 3%;
+  top: 77%;
+  transform: translateY(-50%);
+}
+.about-us p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.container {
+  height: 100vh;
+}
+.links {
+  border: 2px solid black;
+  padding: 10px;
+  width: 970px;
+  height: 50px;
+  position: absolute;
+  bottom: 3;
+  top: 180%;
+  transform: translateY(-50%);
+}
+.links p {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+}
+

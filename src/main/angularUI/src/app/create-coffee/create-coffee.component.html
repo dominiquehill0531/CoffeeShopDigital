@@ -1,0 +1,36 @@
+<header>
+    <div class ="helloname">Hello, Name</div>
+    <div class ="logout">Logout</div>
+    <img class= "cart-icon" src="../../assets/images/cart-icon.jpeg">
+    <a href="/">
+        <img src="../../assets/images/DJC logo.png" alt="logo">
+    </a>
+</header>
+
+<div class="coffee-cup">
+    <!-- add code to display the selected drink -->
+    <img src="../../assets/images/coffee-cup.jpeg">
+    <p>Selected Drink</p>
+</div>
+
+<div class="customization">
+    <p>Add Customizations:</p>
+    <label for="milk">Milk</label>
+    <select name="milk">
+        <option *ngFor="let milk of milks" >{{milk}}</option>
+    </select><br>
+    <label for="flavor">Flavors</label>
+    <select name="flavor">
+        <option *ngFor="let flavor of flavors" >{{flavor}}</option>
+    </select><br>
+    <label for="topping">Flavors</label>
+    <select name="topping">
+        <option *ngFor="let topping of toppings" >{{topping}}</option>
+    </select>
+</div>
+
+<div>
+    <img src="../../assets/images/coffee-cup-icon.png">
+</div>
+
+<button>Order Now</button>

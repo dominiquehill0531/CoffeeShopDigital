@@ -1,0 +1,64 @@
+img {
+    padding: 20px;
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+}
+
+.helloname {
+    position: absolute;
+    top:5%;
+    right: 135px;
+    margin-right: 10px; 
+    transform: translateY(-50%);
+    font-weight: bold;
+    color:teal;
+    font-size: 28px;
+}
+
+.logout {
+    position: absolute;
+    top:5%;
+    right: 40px;
+    margin-right: 10px; 
+    transform: translateY(-50%);
+    font-weight: bold;
+    color:teal;
+    font-size: 20px;
+}
+
+.cart-icon {
+    position: absolute;
+    top:5%;
+    right: 250px;
+    margin-right: 30px; 
+    transform: translateY(-50%);
+    height: 80px;
+    width: 80px;
+}
+
+.coffee-cup img{
+    float:left;
+    margin-left: 30px;
+    height: 80px;
+    width: 80px;
+}
+
+.coffee-cup p {
+    margin-left: 200px;
+    font-style: italic;
+    padding-top: 30px;
+}
+
+.customization p {
+    margin-top: 100px;
+    margin-left: 30px;
+}
+
+.customization select {
+    margin-left: 30px;
+}
+

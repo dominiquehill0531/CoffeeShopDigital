@@ -1,0 +1,44 @@
+<a href="/" class="navbar">Logout</a>
+<header>
+    <a href="/">
+        <img src="../../assets/images/DJC logo.png" alt="logo">
+    </a>
+    
+    <div id="main">
+        <!-- have to add code to display selected item -->
+        <h2>Edit [Item Name]</h2> <button>Delete Item</button>
+    </div>
+</header>
+
+<section class="menu">
+    <div class="container">
+      <div class="box1">
+        <p *ngFor ="let menulist of menuList"> {{menulist}}</p>    
+      </div>
+    </div>
+  </section>
+
+<table>
+    <tr>
+        <td>Name</td>
+        <!-- get the name of menu item -->
+        <td>Name of Item</td>
+    </tr>
+    <tr>
+        <td>Category</td>
+        <!-- get the category of menu item -->
+        <td>Name of category</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <!-- get the description of menu item -->
+      <td>description</td>
+  </tr>
+  <tr>
+    <td>Price</td>
+    <!-- get the price of menu item -->
+    <td>amount in $$</td>
+</tr>
+</table>
+
+<button class="save">Save Changes</button>

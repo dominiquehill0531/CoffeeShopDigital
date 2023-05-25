@@ -4,4 +4,10 @@
     <option name="gradleBuildDir" value="C:\Users\djh007ktr\LC101\CoffeeShopDigital\build" />
     <option name="gradleModuleDir" value="C:\Users\djh007ktr\LC101\CoffeeShopDigital" />
   </component>
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../..">
+      <excludeFolder url="file://$MODULE_DIR$/.." />
+      <excludeFolder url="file://$MODULE_DIR$/../../src/main/angularUI/node_modules" />
+    </content>
+  </component>
 </module>
