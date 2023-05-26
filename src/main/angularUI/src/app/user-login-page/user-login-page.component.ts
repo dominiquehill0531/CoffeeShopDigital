@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
-import { LoginuserService } from '../services/loginuser.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-user-login-page',
@@ -10,15 +10,15 @@ import { LoginuserService } from '../services/loginuser.service';
 export class UserLoginPageComponent implements OnInit {
 
   user:User = new User();
-  constructor(private loginuserservice:LoginuserService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }
 
   userLogin(){
     console.log(this.user);
-    this.loginuserservice.loginUser(this.user).subscribe(data=>{
-      alert("login sucessful")
+    this.userService.loginUser(this.user).subscribe(data=>{
+      alert("login successful")
     }, error=> alert("Please enter correct username and password"));
   }
 }

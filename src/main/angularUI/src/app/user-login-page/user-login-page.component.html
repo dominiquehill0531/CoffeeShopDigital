@@ -1,55 +1,55 @@
 <body id ="container">
 
     <header id="header">
-  
+
       <!-- Link to hompage once it is created -->
       <button type="submit" id="homeBtn"> Return Home </button>
-  
+
     </header>
-  
+
       <div class="user-login-style" id="box">
-  
+
         <img src="../../assets/images/DJC logo.png" id="logo-style" alt="Coffee Shop Logo" height="100px">
-  
+
           <hr id="line-css">
-  
+
             <h3>Log In</h3>
-  
+
               <form (ngSubmit)="userLogin()">
-  
-                <label for="username"></label><br>
-                <input type="text" [(ngModel)]="user.username" id="username" name="username" placeholder="Username "><br>
-  
+
+                <label for="email"></label><br>
+                <input type="text" [(ngModel)]="user.email" id="email" name="email" placeholder="Email"><br>
+
                 <label for="password"></label><br>
                 <input type="text" [(ngModel)]="user.password" id="password" name="password" placeholder="Password"><br><br>
-  
+
                 <input type="checkbox" id="remember-me">
                 <label for="remember-me">Remember Me?</label><br><br>
-  
+
                 <!-- Link to User Home Page once created -->
                 <button type="submit"> Log In </button>
-  
+
                 <p> or </p>
-  
+
                 <!-- Buttons will just link to social media pages -->
                 <button type="submit"> Sign in with Facebook </button><br><br>
                 <button type="submit"> Sign in with Google </button>
-  
+
                 <!-- figure out where to link this -->
                 <p id="lostPwdStyle"> Forgot Password? </p>
-  
+
                 <p> Don't have an account? </p>
-  
+
                 <!-- Link to register user page -->
                 <p id="signUpStyle"> Sign up now! </p>
-  
+
               </form>
-  
-  
+
+
       </div>
-  
+
     <!-- <footer id="footer"> -->
-  
+
       <!-- <a class="social-style" href="https://www.linkedin.com"
       aria-label="Linkedin Link" target="_blank" rel="noopener">
       <ion-icon name="logo-linkedin"></ion-icon>
@@ -66,11 +66,11 @@
       aria-label="Facebook Link" target="_blank" rel="noopener">
       <ion-icon name="logo-facebook"></ion-icon>
   </a>  -->
-  
-  
+
+
     <!-- </footer> -->
-  
+
     <!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
-  
+
   </body>

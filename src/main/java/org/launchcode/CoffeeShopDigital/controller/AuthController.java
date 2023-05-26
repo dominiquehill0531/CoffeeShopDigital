@@ -68,7 +68,7 @@ public class AuthController {
                 roles));
     }
 
-    @PostMapping("/registerUser")
+    @PostMapping("/register-user")
     public ResponseEntity<?> registerUser(@Valid @RequestBody RegisterUserReq registerUserReq) {
         if (userRepository.existsByEmail(registerUserReq.getEmail())) {
             return ResponseEntity
@@ -76,13 +76,13 @@ public class AuthController {
                     .body(new MessageResp("Error: Email is already signed up!"));
         }
         //Create new User Account
+        Set<String> strRoles = registerUserReq.getRole();
+        Set<Role> roles = new HashSet<>();
         User user = new User(registerUserReq.getName(),
                 registerUserReq.getBirthday(),
                 registerUserReq.getEmail(),
-                encoder.encode(registerUserReq.getPassword()));
-
-        Set<String> strRoles = registerUserReq.getRole();
-        Set<Role> roles = new HashSet<>();
+                encoder.encode(registerUserReq.getPassword()),
+                roles);
 
         if (strRoles == null) {
             Role userRole = roleRepository.findByName(ERole.USER)
@@ -95,7 +95,7 @@ public class AuthController {
         return ResponseEntity.ok(new MessageResp("User registered successfully!"));
     }
 
-    @PostMapping("/registerAdmin")
+    @PostMapping("/register-admin")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> registerAdmin(@Valid @RequestBody RegisterAdminReq registerAdminReq) {
         if (userRepository.existsByEmail(registerAdminReq.getEmail())) {
@@ -103,14 +103,14 @@ public class AuthController {
                     .badRequest()
                     .body(new MessageResp("Error: User already exists, upgrade ${registerAdminReq.getName()} to Admin instead!"));
         }
-        // Create new admin's account
+        // Create new admin User account
+        Set<String> strRoles = registerAdminReq.getRole();
+        Set<Role> roles = new HashSet<>();
         User user = new User(registerAdminReq.getName(),
                 registerAdminReq.getBirthday(),
                 registerAdminReq.getEmail(),
-                encoder.encode(registerAdminReq.getPassword()));
-
-        Set<String> strRoles = registerAdminReq.getRole();
-        Set<Role> roles = new HashSet<>();
+                encoder.encode(registerAdminReq.getPassword()),
+                roles);
 
         if (strRoles == null) {
             Role userRole = roleRepository.findByName(ERole.USER)

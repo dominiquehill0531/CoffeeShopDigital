@@ -17,7 +17,7 @@ public class User {
     @NotBlank
     private String name;
     @NotBlank
-    @Pattern(regexp = "[ [0[1-9]] | [[1-2]d] | [3[0,1]] ]/[ [0[1-9]] | [1[0-2]] ]",
+    @Pattern(regexp = "^(((0[13578]|(10|12))/(0[1-9]|[1-2][0-9]|3[0-1]))|(02/(0[1-9]|[1-2][0-9]))|((0[469]|11)/(0[1-9]|[1-2][0-9]|30)))$",
             message = "Enter birthday in format 'DD/MM', including the forward slash")
     private String birthday;
     @NotBlank
@@ -35,11 +35,12 @@ public class User {
     private Set<Role> roles = new HashSet<>();
 
     public User() { }
-    public User(String name, String birthday, String email, String password) {
+    public User(String name, String birthday, String email, String password, Set<Role> roles) {
         this.name = name;
         this.birthday = birthday;
         this.email = email;
         this.password = password;
+        this.roles = roles;
     }
 
     public long getId() {
