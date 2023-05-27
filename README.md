@@ -9,7 +9,12 @@ Customers can create profiles and place online orders.
 
 ## Usage
 
-## Contributing
+## Contributing (alphabetical)
+    JerMarco Britton
+    Dominiqeue Hill
+    Ronnie Horn
+    Mei Ling Liu
+    Shweta Shrivastava
 
 ## License
 [GNU GENERAL PUBLIC LICENSE](COPYING)
