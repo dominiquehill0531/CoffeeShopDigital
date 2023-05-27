@@ -57,8 +57,8 @@ public class WebSecurityConfig {
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
             .authorizeRequests()
                 .antMatchers("/api/auth/login").anonymous()
-                //.antMatchers("/api/auth/**").permitAll()
-                //.antMatchers("/api/test/**").permitAll()
+                .antMatchers("/api/auth/register/user").anonymous()
+                .antMatchers("/api/test/register/admin").hasRole("ADMIN")
                 .anyRequest().authenticated();
 
         http.authenticationProvider(authenticationProvider());

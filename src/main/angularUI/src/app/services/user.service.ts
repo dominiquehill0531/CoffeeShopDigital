@@ -14,12 +14,12 @@ export class UserService {
 
   createUser(user: User): Observable<object> {
     console.log(user);
-    return this.httpClient.post(`${this.baseUrl}/register-user`, user);
+    return this.httpClient.post(`${this.baseUrl}/register/user`, user);
   }
 
   createAdmin(user: User): Observable<object> {
     console.log(user);
-    return this.httpClient.post(`${this.baseUrl}/register-admin`, user);
+    return this.httpClient.post(`${this.baseUrl}/register/admin`, user);
   }
 
   loginUser(user: User): Observable<object>{
