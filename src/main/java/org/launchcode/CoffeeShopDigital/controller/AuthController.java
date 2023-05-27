@@ -14,11 +14,11 @@ import org.launchcode.CoffeeShopDigital.security.jwt.JwtUtils;
 import org.launchcode.CoffeeShopDigital.security.service.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,8 +28,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@CrossOrigin(origins = "localhost:4200", maxAge = 4800)
 @RestController
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RequestMapping("/api/auth")
 public class AuthController {
     @Autowired
@@ -42,11 +42,12 @@ public class AuthController {
     RoleRepository roleRepository;
 
     @Autowired
-    PasswordEncoder encoder;
+    PasswordEncoder encoder = new BCryptPasswordEncoder();
 
     @Autowired
     JwtUtils jwtUtils;
 
+    @CrossOrigin(allowCredentials = "true", maxAge = 3600)
     @PostMapping("/login")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginReq loginRequest) {
 
@@ -61,6 +62,9 @@ public class AuthController {
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
 
+
+
+
         return ResponseEntity.ok(new JwtResp(jwt,
                 userDetails.getId(),
                 userDetails.getUsername(),
@@ -68,7 +72,7 @@ public class AuthController {
                 roles));
     }
 
-    @PostMapping("/register-user")
+    @PostMapping("/register/user")
     public ResponseEntity<?> registerUser(@Valid @RequestBody RegisterUserReq registerUserReq) {
         if (userRepository.existsByEmail(registerUserReq.getEmail())) {
             return ResponseEntity
@@ -95,8 +99,7 @@ public class AuthController {
         return ResponseEntity.ok(new MessageResp("User registered successfully!"));
     }
 
-    @PostMapping("/register-admin")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PostMapping("/register/admin")
     public ResponseEntity<?> registerAdmin(@Valid @RequestBody RegisterAdminReq registerAdminReq) {
         if (userRepository.existsByEmail(registerAdminReq.getEmail())) {
             return ResponseEntity

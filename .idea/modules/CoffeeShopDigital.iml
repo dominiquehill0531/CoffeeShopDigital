@@ -6,8 +6,8 @@
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$/../..">
-      <excludeFolder url="file://$MODULE_DIR$/.." />
       <excludeFolder url="file://$MODULE_DIR$/../../src/main/angularUI/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/../../src/main/angularUI/.angular" />
     </content>
   </component>
 </module>
