@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c379f3ac-c97d-4afb-b877-53fd1319b55d" name="Changes" comment="initial admin user upon first run;&#10;beginning register-user component">
-      <change beforePath="$PROJECT_DIR$/.idea/modules/CoffeeShopDigital.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/CoffeeShopDigital.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/angularUI/src/app/user-login-page/user-login-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/angularUI/src/app/user-login-page/user-login-page.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/security/CommandLineAppStartupRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/security/CommandLineAppStartupRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/security/WebSecurityConfig.java" afterDir="false" />
-    </list>
+    <list default="true" id="c379f3ac-c97d-4afb-b877-53fd1319b55d" name="Changes" comment="Spring Security configured; User login totally functionaal with redirx" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -296,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685133326690</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Spring Security configured; User login totally functionaal with redirx">
+      <created>1685223728858</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1685223728858</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -352,7 +352,8 @@
     <MESSAGE value="Pushing Locals up 4" />
     <MESSAGE value="Pushing Locals up 5; add README and License" />
     <MESSAGE value="initial admin user upon first run;&#10;beginning register-user component" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial admin user upon first run;&#10;beginning register-user component" />
+    <MESSAGE value="Spring Security configured; User login totally functionaal with redirx" />
+    <option name="LAST_COMMIT_MESSAGE" value="Spring Security configured; User login totally functionaal with redirx" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
