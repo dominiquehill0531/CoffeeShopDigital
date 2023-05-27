@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c379f3ac-c97d-4afb-b877-53fd1319b55d" name="Changes" comment="Spring Security configured; User login totally functionaal with redirx" />
+    <list default="true" id="c379f3ac-c97d-4afb-b877-53fd1319b55d" name="Changes" comment="Readme and License begin; updated gitignore">
+      <change afterPath="$PROJECT_DIR$/FALSESTARTS.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/angularUI/src/app/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/angularUI/src/app/services/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/security/WebSecurityConfig.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -296,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685223728858</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Readme and License begin; updated gitignore">
+      <created>1685229328999</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1685229328999</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -353,7 +365,8 @@
     <MESSAGE value="Pushing Locals up 5; add README and License" />
     <MESSAGE value="initial admin user upon first run;&#10;beginning register-user component" />
     <MESSAGE value="Spring Security configured; User login totally functionaal with redirx" />
-    <option name="LAST_COMMIT_MESSAGE" value="Spring Security configured; User login totally functionaal with redirx" />
+    <MESSAGE value="Readme and License begin; updated gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Readme and License begin; updated gitignore" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
