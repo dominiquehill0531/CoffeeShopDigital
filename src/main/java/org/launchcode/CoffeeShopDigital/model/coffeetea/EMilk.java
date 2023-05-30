@@ -6,5 +6,5 @@ public enum EMilk {
     ALMOND,
     SKIM,
     TWO_PERCENT,
-    WHOLE
+    WHOLE;
 }
