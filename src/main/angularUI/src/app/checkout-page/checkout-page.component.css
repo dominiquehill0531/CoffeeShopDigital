@@ -1,0 +1,75 @@
+#container {
+  display: grid;
+  max-width: 100%;
+  margin: auto;
+  grid-template-columns: repeat(auto-fit, min-max(450px, 1fr));
+  grid-template-rows: 5vh 20vh 75vh;
+
+  grid-template-areas:
+
+  "hd hd"
+  "sum sum"
+  "form form"
+    ;
+
+}
+
+#header {
+  grid-area: "hd";
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+#chkoutSummary {
+  grid-area: "sum";
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  border: 1px solid black;
+  max-width: 30%;
+}
+
+#chkoutForm {
+  grid-area: "form";
+  display: table;
+  table-layout: auto;
+  padding: 5px;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  border: 1px solid black;
+  max-width: 40%;
+}
+
+
+#billingField {
+  max-width: 95%;
+  margin: auto;
+}
+
+#orderNotesField {
+  height: 40px;
+}
+
+#cardNumberField {
+  max-width: 95%;
+  margin: auto;
+}
+
+#logo-style {
+  display: flex;
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+#btnStyle {
+  text-transform: uppercase;
+  padding: 3px;
+  &:hover {
+    background-color: green;
+  }
+}
