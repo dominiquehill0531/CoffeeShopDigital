@@ -23,6 +23,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -46,6 +47,29 @@ public class AuthController {
 
     @Autowired
     JwtUtils jwtUtils;
+
+    private static long guestId = 0;
+
+
+    @CrossOrigin(allowCredentials = "true", maxAge = 3600)
+    @GetMapping("/user-details")
+    public ResponseEntity<?> getUserDetails() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        if (!authentication.isAuthenticated()) {
+            ArrayList<Object> respBody = new ArrayList<>();
+            respBody.add(new UserDetailsImpl(guestId, null, "guest${guestId}", null, null, null, null));
+            respBody.add(new MessageResp("No user is signed in; proceeding as Guest"));
+            guestId++;
+
+            return ResponseEntity.ok()
+                    .body(respBody);
+        }
+
+        UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getDetails();
+        return ResponseEntity.ok(userDetails);
+
+    }
 
     @CrossOrigin(allowCredentials = "true", maxAge = 3600)
     @PostMapping("/login")
@@ -121,12 +145,12 @@ public class AuthController {
             roles.add(userRole);
         } else {
             strRoles.forEach(role -> {
-                if (role == "admin") {
+                if (role.equals("admin")) {
                     Role adminRole = roleRepository.findByName(ERole.ADMIN)
                             .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
                     roles.add(adminRole);
                 }
-                if (role == "user") {
+                if (role.equals("user")) {
                     Role userRole = roleRepository.findByName(ERole.USER)
                             .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
                     roles.add(userRole);
@@ -141,5 +165,5 @@ public class AuthController {
     }
 
     //TODO: Add upgradeUser method to add ADMIN role to an existing User as an Admin
-
+    //TODO: Add logoutUser method to logout
 }
