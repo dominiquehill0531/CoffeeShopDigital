@@ -29,6 +29,7 @@ import { UserHomepageComponent } from './pages/user-homepage/user-homepage.compo
 import { OrderItemSpecificsComponent } from './pages/order-item-specifics/order-item-specifics.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
+import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { RegisterUserComponent } from './register-user/register-user.component';
     OrderItemSpecificsComponent,
     HomePageComponent,
     RegisterUserComponent,
+    CheckoutPageComponent,
 
   ],
   imports: [
