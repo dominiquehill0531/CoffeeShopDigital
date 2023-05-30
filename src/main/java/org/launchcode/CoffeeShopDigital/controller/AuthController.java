@@ -86,14 +86,16 @@ public class AuthController {
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
 
-
-
-
         return ResponseEntity.ok(new JwtResp(jwt,
                 userDetails.getId(),
                 userDetails.getUsername(),
                 userDetails.getEmail(),
                 roles));
+    }
+
+    @PostMapping("/logout")
+    public void logoutUser() {
+        SecurityContextHolder.getContext().setAuthentication(null);
     }
 
     @PostMapping("/register/user")
