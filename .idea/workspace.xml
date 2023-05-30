@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c379f3ac-c97d-4afb-b877-53fd1319b55d" name="Changes" comment="Readme and License begin; updated gitignore">
-      <change afterPath="$PROJECT_DIR$/FALSESTARTS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/angularUI/src/app/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/angularUI/src/app/services/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/security/WebSecurityConfig.java" afterDir="false" />
-    </list>
+    <list default="true" id="c379f3ac-c97d-4afb-b877-53fd1319b55d" name="Changes" comment="Halfway through data modelling on the backend for creating Drink objects. Some drink types, enums, and the data model for Order remain. Also left TODOs for later" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,8 +56,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -72,6 +67,11 @@
         <option name="argument" value="--tags" />
         <option name="title" value="All" />
       </GitPushTagMode>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
     </option>
   </component>
   <component name="GithubDefaultAccount">
@@ -110,6 +110,10 @@
       <recent name="C:\Users\djh007ktr\LC101\CoffeeShopDigital\src\main\shop-coffee" />
       <recent name="C:\Users\djh007ktr\LC101\CoffeeShopDigital\src\main\angularclient\src2" />
       <recent name="C:\Users\djh007ktr\LC101\CoffeeShopDigital\src\main" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.launchcode.CoffeeShopDigital.model.coffee.bean" />
+      <recent name="org.launchcode.CoffeeShopDigital.model.coffee.drink_options" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.CoffeeShopDigital [bootRun]">
@@ -308,7 +312,42 @@
       <option name="project" value="LOCAL" />
       <updated>1685229328999</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added falsestarts documentation, deleted Spring's help doc">
+      <created>1685231255851</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1685231255851</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Auth prep for register components">
+      <created>1685231352497</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1685231352497</updated>
+    </task>
+    <task id="LOCAL-00019" summary="small edit FALSESTARTS.md for readability">
+      <created>1685231563392</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1685231563392</updated>
+    </task>
+    <task id="LOCAL-00020" summary="small edit FALSESTARTS.md for readability; add contributors to README.md">
+      <created>1685231933632</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1685231933632</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Halfway through data modelling on the backend for creating Drink objects. Some drink types, enums, and the data model for Order remain. Also left TODOs for later">
+      <created>1685313763125</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1685313763125</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -366,7 +405,12 @@
     <MESSAGE value="initial admin user upon first run;&#10;beginning register-user component" />
     <MESSAGE value="Spring Security configured; User login totally functionaal with redirx" />
     <MESSAGE value="Readme and License begin; updated gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Readme and License begin; updated gitignore" />
+    <MESSAGE value="Added falsestarts documentation, deleted Spring's help doc" />
+    <MESSAGE value="Auth prep for register components" />
+    <MESSAGE value="small edit FALSESTARTS.md for readability" />
+    <MESSAGE value="small edit FALSESTARTS.md for readability; add contributors to README.md" />
+    <MESSAGE value="Halfway through data modelling on the backend for creating Drink objects. Some drink types, enums, and the data model for Order remain. Also left TODOs for later" />
+    <option name="LAST_COMMIT_MESSAGE" value="Halfway through data modelling on the backend for creating Drink objects. Some drink types, enums, and the data model for Order remain. Also left TODOs for later" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
