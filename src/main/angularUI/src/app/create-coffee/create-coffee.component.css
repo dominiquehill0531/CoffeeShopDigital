@@ -43,22 +43,59 @@ img {
 .coffee-cup img{
     float:left;
     margin-left: 30px;
-    height: 80px;
-    width: 80px;
+    height: 90px;
+    width: 90px;
 }
 
 .coffee-cup p {
     margin-left: 200px;
     font-style: italic;
+    font-size: 150%;
     padding-top: 30px;
 }
 
 .customization p {
     margin-top: 100px;
-    margin-left: 30px;
 }
 
 .customization select {
     margin-left: 30px;
+}
+
+.align{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align: right;
+    width: 25%;
+    line-height: 26px;
+    margin-bottom: 10px;
+}
+
+select{
+    height: 20px;
+    width: 20px;
+    flex: 0 0 150px;
+    /* margin-left: 10px; */
+}
+
+.column {
+    flex: 50%;
+}
+
+.row {
+    display: flex;
+}
+
+.column img{
+    height: 30%;
+    width: 20%;
+    
+}
+
+button{
+    margin-left: 50%;
+    margin-top: 5%;
+    
 }
 
