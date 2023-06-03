@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Homepage</title>
+</head>
+<body>
+  <header>
+    <div class ="helloname">Hello, Name</div>
+    <div class ="logout">
+      <form (ngSubmit)="goToLoginPage()">
+        <button type="submit">logout</button>
+      </form>
+    </div>
+    <div class="DreamyLogo">
+      <img src="\assets\images\DJC logo.png" alt="DreamyLogo">
+    </div>
+  </header>
+
+  <section class="gallery">
+    <div class="grid-container">
+      <div *ngFor="let item of ItemsForSale" class="grid-item" (click)="gotoOrderItem()">
+        <img [src]="item.imageUrl">
+        <p>{{ item.name }} - <span class="price">${{ item.price }}</span></p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="menu">
+    <div class="container">
+      <div class="box1">
+        <p>Menu</p>
+        <p>Coffee</p>
+        <p>Tea</p>
+        <p>Pastry</p>
+      </div>
+    </div>
+  </section>
+  <!-- need to find out how to link these 3 to the selected favorites. -->
+  <section class="list">
+    <div class="container">
+      <div class="box2">
+        <p>Your Favorites!</p>
+        <section class="gallery">
+          
+          <div class="favitem1">
+            <img src="\assets\images\almond toffee.png" alt="item 1">
+            <div class="itemtext2">item 1
+              <label>
+                <input type="checkbox" name="item-1-checkbox">
+              </label>
+            </div>
+            <div class="favitem1">
+              <img src="\assets\images\image(3).webp" alt="item 2">
+              <div class="itemtext2">item 2
+                <label>
+                <input type="checkbox" name="item-1-checkbox">
+              </label></div>
+            </div>
+            <div class="favitem1">
+              <img src="\assets\images\image(5).webp" alt="item 3">
+              <div class="itemtext2">item 3        
+                <label>
+                  <input type="checkbox" name="item-1-checkbox">
+                </label></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

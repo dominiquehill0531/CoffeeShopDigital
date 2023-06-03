@@ -1,0 +1,196 @@
+.helloname {
+  position: absolute;
+  top:3%;
+  right: 135px;
+  margin-right: 10px;
+  transform: translateY(-50%);
+  font-weight: bold;
+  color:teal;
+  font-size: 2em;
+
+}
+.logout {
+  position: absolute;
+  top: 3%;
+  right: 40px;
+  margin-right: 10px;
+  transform: translateY(-50%);
+  font-weight: bold;
+  color: teal;
+  font-size: 1em;
+}
+.logout button:hover {
+  cursor: pointer;
+}
+.DreamyLogo {
+  margin: 25px;
+  width: 500px;
+  height: 0px;
+  outline: transparent 1px rgb(22, 22, 22);
+  outline: center;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 1%;
+  left: 49%;
+  align-items: center;
+}
+
+.DreamyLogo img {
+  width: 33%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.galleries-container {
+  display: flex;
+}
+
+
+
+.galleries-container {
+  position: relative;
+  top:14%;
+  left: 14%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px; /* Adjust this value to make the galleries closer */
+  max-width: 60%;
+}
+
+
+.gallery:nth-child(1) .grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+}
+.gallery:nth-child(1) .grid-container img {
+  width: 4em;
+  height: auto;
+}
+
+.gallery:nth-child(2) .grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2px;
+}
+.gallery:nth-child(2) .grid-container img {
+  width: 4em;
+  height: auto;
+}
+
+.gallery:nth-child(3) .grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+}
+.gallery:nth-child(3) .grid-container img {
+  width: 4em;
+  height: auto;
+}
+
+.gallery:nth-child(4) .grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2px;
+}
+.gallery:nth-child(4) .grid-container img {
+  width: 4em;
+  height: auto;
+}
+
+.gallery {
+  padding:80%;
+  display: flex;
+  justify-content: center;
+  color: teal;
+  margin: 0 0 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  grid-gap: 10px;
+  max-width: 40px;
+  grid-auto-flow: row;
+}
+
+
+.grid-item {
+  text-align: center;
+}
+
+.grid-item img {
+  height: auto;
+  margin-bottom: 1px;
+  border-radius: 20px;
+}
+
+.price {
+  font-weight: bold;
+}
+p {
+  font-size: 2em;
+  line-height: 1.5;
+  text-align: center;
+}
+/* for the drink items */
+.box1 {
+  border: 2px solid black;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  top: 56%;
+  transform: translateY(-35%);
+  font-weight: bold;
+  color:rgb(171, 227, 227);
+  text-align: center;
+  background: linear-gradient(rgba(9, 2, 2, 0.685), rgba(118, 65, 16, 0.8));
+
+}
+
+.box1 p {
+  font-size: 3.4em;
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+
+body {
+  background-image:url('/assets/images/christina-rumpf-LMzwJDu6hTE-unsplash.jpg');
+
+ background-size: auto 200%;
+  width: 100%;
+  height: 150%;
+ background-position: center;
+  }
+
+
+/* Drink item menu bar */
+  .box2 {
+    display: inline-block;
+    /* border: 2px solid black; */
+    padding: 10px;
+    width: 1500px;
+    height: 72px;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    top: 30%;
+    transform: translateY(-35%);
+    font-weight: bold;
+    color:rgb(171, 227, 227);
+    text-align: center;
+    background: linear-gradient(rgba(9, 2, 2, 0.685), rgba(118, 65, 16, 0.8));
+  }
+  
+  .box2 p {
+    display: inline-block;
+    font-size: 35px;
+    line-height: 1.5;
+    margin: 0 40px;
+  }
+
+
