@@ -1,6 +1,8 @@
 package org.launchcode.CoffeeShopDigital.model;
 
-public enum ERole {
+public enum ERole{
     USER,
     ADMIN
+
 }
+

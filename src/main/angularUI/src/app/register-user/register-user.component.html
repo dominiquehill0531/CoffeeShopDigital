@@ -3,7 +3,7 @@
 <header id="header">
 
   <!-- Link to hompage once it is created -->
-  <button type="submit" id="homeBtn"> Return Home </button>
+  <button id="homeBtn"> Return Home </button>
 
 </header>
 
@@ -13,42 +13,38 @@
 
   <hr id="line-css">
 
-  <h3>Log In</h3>
+  <h3>Register a New User</h3>
 
   <form (ngSubmit)="userRegistration()">
 
-    <label for="name"></label><br>
-    <input type="text" [(ngModel)]="user.name" id="name" name="name" placeholder="Name "><br>
+    <label>Name<br>
+    <input type="text" [(ngModel)]="user.name" id="name" name="name" placeholder="Name" autocomplete="given-name"></label><br>
 
-    <label for="email"></label><br>
-    <input type="text" [(ngModel)]="user.email" id="email" name="email" placeholder="Email"><br>
+    <label>Email<br>
+    <input type="text" [(ngModel)]="user.email" id="email" name="email" placeholder="Email" autocomplete="email"></label><br>
 
-    <label for="password"></label><br>
-    <input type="text" [(ngModel)]="user.password" id="password" name="password" placeholder="Password"><br>
+    <label>Birthday<br>
+    <input type="text" [(ngModel)]="user.birthday" id="birthday" name="birthday" placeholder="MM/DD"></label><br>
 
+    <label>Password<br>
+    <input type="password" [(ngModel)]="user.password" id="password" name="password" placeholder="Password" autocomplete="new-password"><br>
+    <input type="password" [(ngModel)]="confirmPassword" id="confirmPw" name="confirmPassword" placeholder="Confirm Password"></label><br>
 
-
-    <input type="checkbox" id="remember-me">
-    <label for="remember-me">Remember Me?</label><br><br>
-
-    <!-- Link to User Home Page once created -->
-    <button type="submit"> Log In </button>
-
-    <p> or </p>
-
-    <!-- Buttons will just link to social media pages -->
-    <button type="submit"> Sign in with Facebook </button><br><br>
-    <button type="submit"> Sign in with Google </button>
-
-    <!-- figure out where to link this -->
-    <p id="lostPwdStyle"> Forgot Password? </p>
-
-    <p> Don't have an account? </p>
-
-    <!-- Link to register user page -->
-    <p id="signUpStyle"> Sign up now! </p>
+    <label>Roles
+      <div>
+        <label>User<input type="checkbox" [(ngModel)]="rUser" id="rUser" name="rUser"><br></label>
+        <label>Admin<input type="checkbox" [(ngModel)]="rAdmin" id="rAdmin" name="rAdmin"><br></label><br>
+      </div>
+    </label>
+            <!-- Link to User Home Page once created -->
+    <button type="submit"> Register </button><br>
 
   </form>
+
+    <p> Already have an account? <a href="./user-login">Sign in!</a></p>
+
+
+
 
 
 </div>
