@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c379f3ac-c97d-4afb-b877-53fd1319b55d" name="Changes" comment="Readme and License begin; updated gitignore">
-      <change afterPath="$PROJECT_DIR$/FALSESTARTS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/angularUI/src/app/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/angularUI/src/app/services/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/security/WebSecurityConfig.java" afterDir="false" />
+    <list default="true" id="c379f3ac-c97d-4afb-b877-53fd1319b55d" name="Changes" comment="Added AuthController method to httpGet userDetails to the angularUI">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/controller/AuthController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +70,12 @@
         <option name="title" value="All" />
       </GitPushTagMode>
     </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="508816ec-304f-4b30-a8d5-2c96258dcdf6" />
@@ -179,8 +182,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.CoffeeShopDigital [bootRun]" />
-        <item itemvalue="Gradle.CoffeeShopDigital [build]" />
         <item itemvalue="Gradle.CoffeeShopDigital [clean]" />
+        <item itemvalue="Gradle.CoffeeShopDigital [build]" />
+        <item itemvalue="Gradle.CoffeeShopDigital [bootRun]" />
+        <item itemvalue="Gradle.CoffeeShopDigital [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -308,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685229328999</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added AuthController method to httpGet userDetails to the angularUI">
+      <created>1685488317705</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1685488317705</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -366,7 +378,8 @@
     <MESSAGE value="initial admin user upon first run;&#10;beginning register-user component" />
     <MESSAGE value="Spring Security configured; User login totally functionaal with redirx" />
     <MESSAGE value="Readme and License begin; updated gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Readme and License begin; updated gitignore" />
+    <MESSAGE value="Added AuthController method to httpGet userDetails to the angularUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added AuthController method to httpGet userDetails to the angularUI" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

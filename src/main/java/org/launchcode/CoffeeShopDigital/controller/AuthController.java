@@ -5,8 +5,6 @@ import org.launchcode.CoffeeShopDigital.dto.request.RegisterAdminReq;
 import org.launchcode.CoffeeShopDigital.dto.request.RegisterUserReq;
 import org.launchcode.CoffeeShopDigital.dto.response.JwtResp;
 import org.launchcode.CoffeeShopDigital.dto.response.MessageResp;
-import org.launchcode.CoffeeShopDigital.model.ERole;
-import org.launchcode.CoffeeShopDigital.model.Role;
 import org.launchcode.CoffeeShopDigital.model.User;
 import org.launchcode.CoffeeShopDigital.repository.RoleRepository;
 import org.launchcode.CoffeeShopDigital.repository.UserRepository;
@@ -24,9 +22,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @RestController
@@ -49,6 +45,9 @@ public class AuthController {
     JwtUtils jwtUtils;
 
     private static long guestId = 0;
+
+    User newUser;
+    User newAdmin;
 
 
     @CrossOrigin(allowCredentials = "true", maxAge = 3600)
@@ -86,14 +85,17 @@ public class AuthController {
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
 
-
-
-
         return ResponseEntity.ok(new JwtResp(jwt,
                 userDetails.getId(),
                 userDetails.getUsername(),
                 userDetails.getEmail(),
                 roles));
+    }
+
+    @PostMapping("/logout")
+    public ResponseEntity<MessageResp> logoutUser() {
+        SecurityContextHolder.getContext().setAuthentication(null);
+        return ResponseEntity.ok().body(new MessageResp("You've been signed out!"));
     }
 
     @PostMapping("/register/user")
@@ -104,21 +106,12 @@ public class AuthController {
                     .body(new MessageResp("Error: Email is already signed up!"));
         }
         //Create new User Account
-        Set<String> strRoles = registerUserReq.getRole();
-        Set<Role> roles = new HashSet<>();
-        User user = new User(registerUserReq.getName(),
+        newUser = new User(registerUserReq.getName(),
                 registerUserReq.getBirthday(),
                 registerUserReq.getEmail(),
                 encoder.encode(registerUserReq.getPassword()),
-                roles);
-
-        if (strRoles == null) {
-            Role userRole = roleRepository.findByName(ERole.USER)
-                    .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-            roles.add(userRole);
-        }
-        user.setRoles(roles);
-        userRepository.save(user);
+                registerUserReq.getRole());
+        userRepository.save(newUser);
 
         return ResponseEntity.ok(new MessageResp("User registered successfully!"));
     }
@@ -131,39 +124,17 @@ public class AuthController {
                     .body(new MessageResp("Error: User already exists, upgrade ${registerAdminReq.getName()} to Admin instead!"));
         }
         // Create new admin User account
-        Set<String> strRoles = registerAdminReq.getRole();
-        Set<Role> roles = new HashSet<>();
-        User user = new User(registerAdminReq.getName(),
+        newAdmin = new User(registerAdminReq.getName(),
                 registerAdminReq.getBirthday(),
                 registerAdminReq.getEmail(),
                 encoder.encode(registerAdminReq.getPassword()),
-                roles);
+                registerAdminReq.getRole());
 
-        if (strRoles == null) {
-            Role userRole = roleRepository.findByName(ERole.USER)
-                    .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-            roles.add(userRole);
-        } else {
-            strRoles.forEach(role -> {
-                if (role.equals("admin")) {
-                    Role adminRole = roleRepository.findByName(ERole.ADMIN)
-                            .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-                    roles.add(adminRole);
-                }
-                if (role.equals("user")) {
-                    Role userRole = roleRepository.findByName(ERole.USER)
-                            .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-                    roles.add(userRole);
-                }
-            });
-        }
-
-        user.setRoles(roles);
-        userRepository.save(user);
+        userRepository.save(newAdmin);
 
         return ResponseEntity.ok(new MessageResp("Admin registered successfully!"));
     }
 
+    //TODO: Fix duplicate role creation (see Bezkoder originial @ https://www.bezkoder.com/spring-boot-login-example-mysql/
     //TODO: Add upgradeUser method to add ADMIN role to an existing User as an Admin
-    //TODO: Add logoutUser method to logout
 }
