@@ -1,0 +1,33 @@
+img {
+    padding: 20px;
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+}
+
+.home {
+    position: absolute;
+    top:5%;
+    right: 135px;
+    margin-right: 10px; 
+    transform: translateY(-50%);
+    font-weight: bold;
+    color:teal;
+    font-size: 28px;
+}
+
+h1{
+    text-align: center;
+    text-decoration: solid;
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    padding: 100px;
+}
+
+p {
+    padding: 10px;
+}

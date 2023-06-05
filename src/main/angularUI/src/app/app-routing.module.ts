@@ -8,6 +8,7 @@ import { OrderItemSpecificsComponent } from './pages/order-item-specifics/order-
 import { HomePageComponent } from './home-page/home-page.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
+import { OrderCompleteComponent } from './order-complete/order-complete.component';
 
 const routes: Routes = [
   { path: 'admin-edit', component: AdminEditPageComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'home-page', component: HomePageComponent },
   { path: 'register-user', component: RegisterUserComponent },
   { path: 'checkout', component: CheckoutPageComponent},
+  { path: 'order-complete', component: OrderCompleteComponent},
   { path: '**', component: HomePageComponent}
 
 ];
