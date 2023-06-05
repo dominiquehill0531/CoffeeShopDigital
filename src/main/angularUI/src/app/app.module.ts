@@ -30,6 +30,7 @@ import { OrderItemSpecificsComponent } from './pages/order-item-specifics/order-
 import { HomePageComponent } from './home-page/home-page.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
+import { OrderCompleteComponent } from './order-complete/order-complete.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
     HomePageComponent,
     RegisterUserComponent,
     CheckoutPageComponent,
+    OrderCompleteComponent,
 
   ],
   imports: [
