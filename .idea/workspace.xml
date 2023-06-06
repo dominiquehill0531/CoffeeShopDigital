@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c379f3ac-c97d-4afb-b877-53fd1319b55d" name="Changes" comment="Added AuthController method to httpGet userDetails to the angularUI">
+    <list default="true" id="c379f3ac-c97d-4afb-b877-53fd1319b55d" name="Changes" comment="Register-user functional">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/angularUI/src/app/register-user/register-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/angularUI/src/app/register-user/register-user.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/angularUI/src/app/register-user/register-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/angularUI/src/app/register-user/register-user.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/angularUI/src/app/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/angularUI/src/app/services/user.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/security/WebSecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -320,7 +325,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685488317705</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added AuthController method to httpPost logout">
+      <created>1685490778104</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1685490778104</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Register-user functional">
+      <created>1685752236783</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1685752236783</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -379,7 +398,23 @@
     <MESSAGE value="Spring Security configured; User login totally functionaal with redirx" />
     <MESSAGE value="Readme and License begin; updated gitignore" />
     <MESSAGE value="Added AuthController method to httpGet userDetails to the angularUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added AuthController method to httpGet userDetails to the angularUI" />
+    <MESSAGE value="Added AuthController method to httpPost logout" />
+    <MESSAGE value="Register-user functional" />
+    <option name="LAST_COMMIT_MESSAGE" value="Register-user functional" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.hibernate.TransientObjectException" package="org.hibernate" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.hibernate.PersistentObjectException" package="org.hibernate" />
+          <option name="timeStamp" value="5" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

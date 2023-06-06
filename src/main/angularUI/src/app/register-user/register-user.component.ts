@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, KeyValueDiffers, OnInit } from '@angular/core';
 import { User } from '../models/user';
 import { ERole } from '../models/erole'
 import { UserService } from '../services/user.service';
+import { KeyValuePipe } from '@angular/common';
 
 @Component({
   selector: 'app-register-user',
@@ -14,10 +15,13 @@ export class RegisterUserComponent implements OnInit {
   confirmPassword: string = "";
   rUser: boolean = false;
   rAdmin: boolean = false;
+  contextDisplay: any;
 
   constructor(private userService: UserService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isRegistrarAdmin();
+  }
 
   userRegistration() {
     let regRoles: string[] = [];
@@ -36,6 +40,14 @@ export class RegisterUserComponent implements OnInit {
               }, error=> alert("Please make sure to enter your information correctly"));
       }
     }
+  }
+
+  isRegistrarAdmin() {
+    this.userService.readUser().subscribe(data=>{
+      let userDetails: any = data;
+      console.log(userDetails);
+    }, error=> alert("Could not retrieve user details"))
+    .unsubscribe();
   }
 
 }

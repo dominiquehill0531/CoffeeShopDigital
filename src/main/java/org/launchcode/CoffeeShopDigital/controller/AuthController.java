@@ -10,6 +10,7 @@ import org.launchcode.CoffeeShopDigital.repository.RoleRepository;
 import org.launchcode.CoffeeShopDigital.repository.UserRepository;
 import org.launchcode.CoffeeShopDigital.security.jwt.JwtUtils;
 import org.launchcode.CoffeeShopDigital.security.service.UserDetailsImpl;
+import org.launchcode.CoffeeShopDigital.security.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -50,8 +51,9 @@ public class AuthController {
     User newAdmin;
 
 
-    @CrossOrigin(allowCredentials = "true", maxAge = 3600)
+    @CrossOrigin(allowCredentials = "true", maxAge = -1)
     @GetMapping("/user-details")
+    @ResponseBody
     public ResponseEntity<?> getUserDetails() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
@@ -61,12 +63,12 @@ public class AuthController {
             respBody.add(new MessageResp("No user is signed in; proceeding as Guest"));
             guestId++;
 
-            return ResponseEntity.ok()
-                    .body(respBody);
+            return ResponseEntity.ok(respBody);
+        } else {
+            UserDetailsServiceImpl userDetailsService = new UserDetailsServiceImpl();
+            UserDetailsImpl userDetails = (UserDetailsImpl) userDetailsService.loadUserByUsername(authentication.getPrincipal().toString());
+            return ResponseEntity.ok(userDetails);
         }
-
-        UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getDetails();
-        return ResponseEntity.ok(userDetails);
 
     }
 
