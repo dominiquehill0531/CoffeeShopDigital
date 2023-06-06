@@ -1,36 +1,68 @@
-<header>
-    <div class ="helloname">Hello, Name</div>
-    <div class ="logout">Logout</div>
-    <img class= "cart-icon" src="../../assets/images/cart-icon.jpeg">
-    <a href="/">
-        <img src="../../assets/images/DJC logo.png" alt="logo">
-    </a>
-</header>
-
-<div class="coffee-cup">
-    <!-- add code to display the selected drink -->
-    <img src="../../assets/images/coffee-cup.jpeg">
-    <p>Selected Drink</p>
-</div>
-
-<div class="customization">
-    <p>Add Customizations:</p>
-    <label for="milk">Milk</label>
-    <select name="milk">
-        <option *ngFor="let milk of milks" >{{milk}}</option>
-    </select><br>
-    <label for="flavor">Flavors</label>
-    <select name="flavor">
-        <option *ngFor="let flavor of flavors" >{{flavor}}</option>
-    </select><br>
-    <label for="topping">Flavors</label>
-    <select name="topping">
-        <option *ngFor="let topping of toppings" >{{topping}}</option>
-    </select>
-</div>
-
-<div>
-    <img src="../../assets/images/coffee-cup-icon.png">
-</div>
-
-<button>Order Now</button>
+<body>
+    <div class="background">
+        <header>
+            <div class ="helloname">Hello, Name</div>
+            <div class ="logout">Logout</div>
+            <img class= "cart-icon" src="../../assets/images/cart-icon.jpeg">
+            <a href="/">
+                <img src="../../assets/images/DJC logo.png" alt="logo">
+            </a>
+        </header>
+        
+        <div class="coffee-cup">
+            <!-- add code to display the selected drink -->
+            <img src="../../assets/images/coffee-cup.jpeg">
+            <p>Selected Drink</p>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="customization">
+                    <p>Add Customizations:</p>
+                    <div class="align">
+                        <label for="milk">Milk</label>
+                        <select name="milk">
+                            <option *ngFor="let milk of milks" >{{milk}}</option>
+                        </select>
+                    </div>
+                    <div class="align">
+                        <label for="flavor">Flavors</label>
+                        <select name="flavor">
+                            <option *ngFor="let flavor of flavors" >{{flavor}}</option>
+                        </select>
+                    </div>
+                    <div class="align">
+                        <label for="topping">Toppings</label>
+                        <select name="topping">
+                            <option *ngFor="let topping of toppings" >{{topping}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="customization">
+                    <p>Select a Size:</p>
+                    <div class="cup">
+                        <div class="smallCup">
+                            <img src="../../assets/images/smallCup.png">
+                        </div>
+                        <p>Small</p>
+                    </div>
+                    <div class="cup">
+                        <div class="medCup">
+                            <img src="../../assets/images/smallCup.png">
+                        </div>
+                        <p>Medium</p>
+                    </div>
+                    <div class="cup">
+                        <div class="largeCup">
+                            <img src="../../assets/images/smallCup.png">
+                        </div>
+                        <p>Large</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <button>Order Now</button>
+    </div>
+</body>

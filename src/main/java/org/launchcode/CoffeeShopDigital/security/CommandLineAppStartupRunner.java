@@ -26,18 +26,18 @@ public class CommandLineAppStartupRunner implements CommandLineRunner {
 
     @Override
     public void run(String...args) throws Exception {
-
-        Set<Role> adminRoles = new HashSet<>();
-        adminRoles.add(new Role(ERole.USER));
-        adminRoles.add(new Role(ERole.ADMIN));
-        roleRepository.saveAll(adminRoles);
-
         PasswordEncoder encoder = new BCryptPasswordEncoder();
         String password = encoder.encode("password");
 
-        if (userRepository.count() < 1) {
-            User admin = new User("admin", "01/01", "admin@email.com", password,
-                    adminRoles);
+
+        if (userRepository.count() < 1 && roleRepository.count() < 1) {
+            Set<Role> adminRoles = new HashSet<>();
+            for (ERole value : ERole.values()) {
+                adminRoles.add(new Role(value));
+            }
+
+
+            User admin = new User("admin", "01/02", "admin@email.com", password, adminRoles);
             userRepository.save(admin);
         }
     }
