@@ -30,9 +30,10 @@ public class User {
     private String password;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable( name = "user_roles",
-                joinColumns = @JoinColumn(name = "user_ida"),
+                joinColumns = @JoinColumn(name = "user_id"),
                 inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles;
+    private Set<Role> roles = new HashSet<>();
+    //TODO: Add savedDrinks arraylist field with getters and setters
 
     public User() { }
     public User(String name, String birthday, String email, String password, Set<Role> roles) {
@@ -89,6 +90,6 @@ public class User {
         return roles;
     }
     public void setRoles(Set<Role> roles) {
-        this.roles = new HashSet<>(roles);
+        this.roles = roles;
     }
 }

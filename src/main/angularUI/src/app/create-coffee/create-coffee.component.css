@@ -1,3 +1,24 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* .background::before{
+    content: '';
+    background-image:url("../../../src/assets/images/christina-rumpf-LMzwJDu6hTE-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.2;
+} */
+
+
 img {
     padding: 20px;
     width: 150px;
@@ -43,22 +64,112 @@ img {
 .coffee-cup img{
     float:left;
     margin-left: 30px;
-    height: 80px;
-    width: 80px;
+    height: 120px;
+    width: 120px;
 }
 
 .coffee-cup p {
     margin-left: 200px;
     font-style: italic;
+    font-weight: 400;
+    font-size: 150%;
     padding-top: 30px;
 }
 
 .customization p {
-    margin-top: 100px;
-    margin-left: 30px;
+    margin-top: 8%;
+    font-weight: 800;
 }
 
 .customization select {
     margin-left: 30px;
 }
 
+.align{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align: right;
+    width: 25%;
+    line-height: 26px;
+    margin-bottom: 10px;
+}
+
+select{
+    height: 20px;
+    width: 20px;
+    flex: 0 0 150px;
+    /* margin-left: 10px; */
+}
+
+.column {
+    flex: 50%;
+}
+
+.row {
+    display: flex;
+}
+
+.column img{
+    height: 30%;
+    width: 20%;
+    
+}
+
+button{
+    margin-left: 43%;
+    margin-top: 5%;
+    height: 70px;
+    width: 15%;
+    background: #5ab2fa;
+	color: #fff;
+	border: 1px solid #eee;
+	border-radius: 80px;
+	box-shadow: 5px 5px 5px #eee;
+	text-shadow: none;
+}
+
+button:hover{
+    background: #0887e8;
+	color: #fff;
+	border: 1px solid #eee;
+	border-radius: 80px;
+	box-shadow: 5px 5px 5px #eee;
+	text-shadow: none;
+}
+
+.itemtext2{
+    margin-left: 30px; 
+    padding: 0;   
+}
+
+.smallImg{
+    margin-left: 0;
+    margin-top: 0;
+    padding: 0;
+    
+}
+
+.cup p{
+    float: left;
+    margin-top: 7%;
+}
+
+.smallCup img{
+    float: left;
+    height: 80px;
+    width: 80px;
+    margin-top: 8px;
+}
+
+.medCup img{
+    float: left;
+    height: 100px;
+    width: 100px;
+}
+
+.largeCup img{
+    float: left;
+    height: 120px;
+    width: 120px;
+}
