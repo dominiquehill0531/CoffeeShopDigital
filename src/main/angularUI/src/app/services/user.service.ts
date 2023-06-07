@@ -22,8 +22,12 @@ export class UserService {
     return this.httpClient.post(`${this.baseUrl}/register/admin`, user);
   }
 
-  loginUser(user: User): Observable<object>{
+  loginUser(user: User): Observable<object> {
     console.log(user);
     return this.httpClient.post(`${this.baseUrl}/login`, user);
+  }
+
+  readUser(): Observable<object> {
+    return this.httpClient.get(`${this.baseUrl}/user-details`, {observe: "body", responseType: "json"});
   }
 }

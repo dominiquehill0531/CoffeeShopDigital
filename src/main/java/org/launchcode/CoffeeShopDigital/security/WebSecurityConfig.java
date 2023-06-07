@@ -58,7 +58,8 @@ public class WebSecurityConfig {
             .authorizeRequests()
                 .antMatchers("/api/auth/login").anonymous()
                 .antMatchers("/api/auth/register/user").anonymous()
-                .antMatchers("/api/test/register/admin").hasRole("ADMIN")
+                .antMatchers("/api/auth/user-details").anonymous()
+                .antMatchers("/api/auth/register/admin").hasRole("ADMIN")
                 .anyRequest().authenticated();
 
         http.authenticationProvider(authenticationProvider());

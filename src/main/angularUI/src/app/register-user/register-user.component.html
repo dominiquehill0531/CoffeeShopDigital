@@ -2,7 +2,7 @@
 
 <header id="header">
 
-  <!-- Link to hompage once it is created -->
+  <!-- Link to homepage once it is created -->
   <button id="homeBtn"> Return Home </button>
 
 </header>
@@ -33,7 +33,9 @@
     <label>Roles
       <div>
         <label>User<input type="checkbox" [(ngModel)]="rUser" id="rUser" name="rUser"><br></label>
-        <label>Admin<input type="checkbox" [(ngModel)]="rAdmin" id="rAdmin" name="rAdmin"><br></label><br>
+        <div *ngIf = "isRegistrarAdmin()">
+          <label>Admin<input type="checkbox" [(ngModel)]="rAdmin" id="rAdmin" name="rAdmin"><br></label><br>
+        </div>
       </div>
     </label>
             <!-- Link to User Home Page once created -->

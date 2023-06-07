@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c379f3ac-c97d-4afb-b877-53fd1319b55d" name="Changes" comment="Halfway through data modelling on the backend for creating Drink objects. Some drink types, enums, and the data model for Order remain. Also left TODOs for later" />
+    <list default="true" id="c379f3ac-c97d-4afb-b877-53fd1319b55d" name="Changes" comment="Register-user functional">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/angularUI/src/app/register-user/register-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/angularUI/src/app/register-user/register-user.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/angularUI/src/app/register-user/register-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/angularUI/src/app/register-user/register-user.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/angularUI/src/app/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/angularUI/src/app/services/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/security/WebSecurityConfig.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,6 +80,7 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
   "lastFilter": {
@@ -362,7 +370,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685313763125</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00018" summary="Added AuthController method to httpPost logout">
+      <created>1685490778104</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1685490778104</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Register-user functional">
+      <created>1685752236783</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1685752236783</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -420,12 +442,24 @@
     <MESSAGE value="initial admin user upon first run;&#10;beginning register-user component" />
     <MESSAGE value="Spring Security configured; User login totally functionaal with redirx" />
     <MESSAGE value="Readme and License begin; updated gitignore" />
-    <MESSAGE value="Added falsestarts documentation, deleted Spring's help doc" />
-    <MESSAGE value="Auth prep for register components" />
-    <MESSAGE value="small edit FALSESTARTS.md for readability" />
-    <MESSAGE value="small edit FALSESTARTS.md for readability; add contributors to README.md" />
-    <MESSAGE value="Halfway through data modelling on the backend for creating Drink objects. Some drink types, enums, and the data model for Order remain. Also left TODOs for later" />
-    <option name="LAST_COMMIT_MESSAGE" value="Halfway through data modelling on the backend for creating Drink objects. Some drink types, enums, and the data model for Order remain. Also left TODOs for later" />
+    <MESSAGE value="Added AuthController method to httpGet userDetails to the angularUI" />
+    <MESSAGE value="Added AuthController method to httpPost logout" />
+    <MESSAGE value="Register-user functional" />
+    <option name="LAST_COMMIT_MESSAGE" value="Register-user functional" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.hibernate.TransientObjectException" package="org.hibernate" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.hibernate.PersistentObjectException" package="org.hibernate" />
+          <option name="timeStamp" value="5" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
