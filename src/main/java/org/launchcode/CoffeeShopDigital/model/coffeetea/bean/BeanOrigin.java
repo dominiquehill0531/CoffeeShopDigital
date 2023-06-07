@@ -42,4 +42,8 @@ public class BeanOrigin {
     public void setPouroverPrice(double pouroverPrice) {
         this.pouroverPrice = pouroverPrice;
     }
+
+    public static EnumMap<EOrigin, Double> getPouroverPriceMap() {
+        return pouroverPriceMap;
+    }
 }

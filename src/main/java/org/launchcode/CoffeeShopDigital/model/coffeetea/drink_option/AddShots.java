@@ -10,8 +10,8 @@ public interface AddShots {
     default void addExtraShots(Drink drink, int quantity) {
         ArrayList<Object> options = drink.getOptions();
         ExtraShots xShots = new ExtraShots(quantity);
-        String shotsString = String.format("Xshots: %1d\t\t+\t$ %2f", xShots.getQuantity(), xShots.getAddPrice());
+        String shotsString = String.format("Xshots: %1d\t\t+\t$ %2f\n", xShots.getQuantity(), xShots.getAddPrice());
         options.add(shotsString);
-        options.add(xShots);
+        options.add(xShots.getAddPrice());
     }
 }

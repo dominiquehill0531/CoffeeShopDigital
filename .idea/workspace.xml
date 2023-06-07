@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c379f3ac-c97d-4afb-b877-53fd1319b55d" name="Changes" comment="Halfway through data modelling on the backend for creating Drink objects. Some drink types, enums, and the data model for Order remain. Also left TODOs for later" />
+    <list default="true" id="c379f3ac-c97d-4afb-b877-53fd1319b55d" name="Changes" comment="Register-user trying to make Admin option conditional upon an admin Principal" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,6 +73,7 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="508816ec-304f-4b30-a8d5-2c96258dcdf6" />
