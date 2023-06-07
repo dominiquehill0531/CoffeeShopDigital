@@ -6,14 +6,13 @@ import org.launchcode.CoffeeShopDigital.model.coffeetea.bean.EOrigin;
 
 public class Pourover extends Drink {
 
-
     private BeanOrigin originChoice;
 
 
     public Pourover() {}
     public Pourover(EOrigin origin) {
         this.originChoice = new BeanOrigin(origin);
-        this.setPrice(originChoice.getPouroverPrice());
+        this.setPrice(this.originChoice.getPouroverPrice());
     }
 
 
