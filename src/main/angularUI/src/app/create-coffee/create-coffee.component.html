@@ -2,7 +2,7 @@
     <div class="background">
         <header>
             <div class ="helloname">Hello, Name</div>
-            <div class ="logout">Logout</div>
+            <a href="/"><div class ="logout">Logout</div></a>
             <img class= "cart-icon" src="../../assets/images/cart-icon.jpeg">
             <a href="/">
                 <img src="../../assets/images/DJC logo.png" alt="logo">
@@ -20,19 +20,19 @@
                     <p>Add Customizations:</p>
                     <div class="align">
                         <label for="milk">Milk</label>
-                        <select name="milk">
-                            <option *ngFor="let milk of milks" >{{milk}}</option>
+                        <select name="milk" (change)="selectedMilkHandler($event)" id="milk">
+                            <option *ngFor="let milk of milks" [value]="milk" >{{milk}}</option>
                         </select>
                     </div>
                     <div class="align">
                         <label for="flavor">Flavors</label>
-                        <select name="flavor">
+                        <select name="flavor" (change)="selectedFlavorsHandler($event)" id="flavor">
                             <option *ngFor="let flavor of flavors" >{{flavor}}</option>
                         </select>
                     </div>
                     <div class="align">
                         <label for="topping">Toppings</label>
-                        <select name="topping">
+                        <select name="topping" (change)="selectedToppingsHandler($event)" id="topping">
                             <option *ngFor="let topping of toppings" >{{topping}}</option>
                         </select>
                     </div>
@@ -45,24 +45,36 @@
                         <div class="smallCup">
                             <img src="../../assets/images/smallCup.png">
                         </div>
-                        <p>Small</p>
+                        <div>Small
+                            <label>
+                                <input type="radio" name="item-1-checkbox" (click)="updateSize('small')" id="size">
+                            </label>
+                        </div>
                     </div>
                     <div class="cup">
                         <div class="medCup">
                             <img src="../../assets/images/smallCup.png">
                         </div>
-                        <p>Medium</p>
+                        <div>Medium
+                            <label>
+                                <input type="radio" name="item-1-checkbox" (click)="updateSize('Medium')" id="size">
+                            </label>
+                        </div>
                     </div>
                     <div class="cup">
                         <div class="largeCup">
                             <img src="../../assets/images/smallCup.png">
                         </div>
-                        <p>Large</p>
+                        <div>Large
+                            <label>
+                                <input type="radio" name="item-1-checkbox" (click)="updateSize('Large')" id="size">
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <button>Order Now</button>
+        <button onsubmit="order()">Order Now</button>
     </div>
 </body>
