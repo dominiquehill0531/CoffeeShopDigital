@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c379f3ac-c97d-4afb-b877-53fd1319b55d" name="Changes" comment="Register-user functional">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/angularUI/src/app/register-user/register-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/angularUI/src/app/register-user/register-user.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/angularUI/src/app/register-user/register-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/angularUI/src/app/register-user/register-user.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/angularUI/src/app/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/angularUI/src/app/services/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/security/WebSecurityConfig.java" afterDir="false" />
-    </list>
+    <list default="true" id="c379f3ac-c97d-4afb-b877-53fd1319b55d" name="Changes" comment="ignore workspacexml" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,11 +75,11 @@
     </option>
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="508816ec-304f-4b30-a8d5-2c96258dcdf6" />
   </component>
@@ -342,19 +335,19 @@
       <option name="project" value="LOCAL" />
       <updated>1685231255851</updated>
     </task>
-    <task id="LOCAL-00018" summary="Auth prep for register components">
-      <created>1685231352497</created>
+    <task id="LOCAL-00018" summary="Added AuthController method to httpPost logout">
+      <created>1685490778104</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1685231352497</updated>
+      <updated>1685490778104</updated>
     </task>
-    <task id="LOCAL-00019" summary="small edit FALSESTARTS.md for readability">
-      <created>1685231563392</created>
+    <task id="LOCAL-00019" summary="Register-user functional">
+      <created>1685752236783</created>
       <option name="number" value="00019" />
       <option name="presentableId" value="LOCAL-00019" />
       <option name="project" value="LOCAL" />
-      <updated>1685231563392</updated>
+      <updated>1685752236783</updated>
     </task>
     <task id="LOCAL-00020" summary="small edit FALSESTARTS.md for readability; add contributors to README.md">
       <created>1685231933632</created>
@@ -369,20 +362,6 @@
       <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
       <updated>1685313763125</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Added AuthController method to httpPost logout">
-      <created>1685490778104</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1685490778104</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Register-user functional">
-      <created>1685752236783</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1685752236783</updated>
     </task>
     <option name="localTasksCounter" value="20" />
     <servers />

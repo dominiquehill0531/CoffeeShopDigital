@@ -11,7 +11,7 @@ Customers can create profiles and place online orders.
 
 ## Contributing (alphabetical)
     JerMarco Britton
-    Dominiqeue Hill
+    Dominique Hill
     Ronnie Horn
     Mei Ling Liu
     Shweta Shrivastava
