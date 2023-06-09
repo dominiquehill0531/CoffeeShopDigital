@@ -3,9 +3,12 @@ package org.launchcode.CoffeeShopDigital.model.coffeetea;
 import org.launchcode.CoffeeShopDigital.model.Purchasable;
 import org.launchcode.CoffeeShopDigital.model.coffeetea.drink_option.AddSweet;
 
+import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+@MappedSuperclass
 public abstract class Drink extends Purchasable implements AddSweet {
 
     private DrinkSize size;

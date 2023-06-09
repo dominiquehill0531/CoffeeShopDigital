@@ -18,14 +18,13 @@ import { MatTableModule } from '@angular/material/table';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { UserHomepageComponent } from './user-homepage/user-homepage.component';
 import { AdminEditPageComponent } from './admin-edit-page/admin-edit-page.component';
 import { UserLoginPageComponent } from './user-login-page/user-login-page.component';
 import { CreateCoffeeComponent } from './create-coffee/create-coffee.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Routes, RouterModule } from '@angular/router';
-import { UserHomepageComponent } from './pages/user-homepage/user-homepage.component';
 import { OrderItemSpecificsComponent } from './pages/order-item-specifics/order-item-specifics.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
@@ -35,17 +34,15 @@ import { OrderCompleteComponent } from './order-complete/order-complete.componen
 @NgModule({
   declarations: [
     AppComponent,
-
     AdminEditPageComponent,
     UserLoginPageComponent,
     CreateCoffeeComponent,
-
-    UserHomepageComponent,
     OrderItemSpecificsComponent,
     HomePageComponent,
     RegisterUserComponent,
     CheckoutPageComponent,
     OrderCompleteComponent,
+    UserHomepageComponent
 
   ],
   imports: [

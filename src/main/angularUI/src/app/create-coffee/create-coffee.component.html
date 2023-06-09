@@ -1,9 +1,10 @@
 <body>
     <div class="background">
         <header>
-            <div class ="helloname">Hello, Name</div>
-            <a href="/"><div class ="logout">Logout</div></a>
-            <img class= "cart-icon" src="../../assets/images/cart-icon.jpeg">
+            <!-- <div class ="helloname">Hello, Name</div> -->
+            <!-- <a><div class ="logout" onclick="logoutUser()">Logout</div></a> -->
+            <button class="logout" (click)="logoutUser()">Logout</button>
+            <!-- <img class= "cart-icon" src="../../assets/images/cart-icon.jpeg"> -->
             <a href="/">
                 <img src="../../assets/images/DJC logo.png" alt="logo">
             </a>
@@ -21,7 +22,7 @@
                     <div class="align">
                         <label for="milk">Milk</label>
                         <select name="milk" (change)="selectedMilkHandler($event)" id="milk">
-                            <option *ngFor="let milk of milks" [value]="milk" >{{milk}}</option>
+                            <option *ngFor="let milk of milkTypes" [value]="milk.name" >{{milk.name}}</option>
                         </select>
                     </div>
                     <div class="align">
@@ -75,6 +76,6 @@
             </div>
         </div>
         
-        <button onsubmit="order()">Order Now</button>
+        <button class="submit" (click)="order()">Order Now</button>
     </div>
 </body>
