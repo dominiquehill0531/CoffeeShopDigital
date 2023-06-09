@@ -30,4 +30,10 @@ export class UserService {
   readUser(): Observable<object> {
     return this.httpClient.get(`${this.baseUrl}/user-details`, {observe: "body", responseType: "json"});
   }
+
+  logout(user: User): Observable<object> {
+    console.log("from logout " + user.email);
+    console.log("from logout " + user.password);
+    return this.httpClient.post(`${this.baseUrl}/logout`, user)    
+  }
 }
