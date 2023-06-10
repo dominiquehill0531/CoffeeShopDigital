@@ -28,7 +28,7 @@
                     <div class="align">
                         <label for="flavor">Flavors</label>
                         <select name="flavor" (change)="selectedFlavorsHandler($event)" id="flavor">
-                            <option *ngFor="let flavor of flavors" >{{flavor}}</option>
+                            <option *ngFor="let flavor of flavorTypes" [value]="flavor.name" >{{flavor.name}}</option>
                         </select>
                     </div>
                     <div class="align">

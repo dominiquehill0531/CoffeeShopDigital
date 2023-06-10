@@ -1,8 +1,10 @@
 package org.launchcode.CoffeeShopDigital.controller;
 
 import org.launchcode.CoffeeShopDigital.model.DrinkTypes;
+import org.launchcode.CoffeeShopDigital.model.Flavors;
 import org.launchcode.CoffeeShopDigital.model.MilkType;
 import org.launchcode.CoffeeShopDigital.repository.DrinkTypesRepo;
+import org.launchcode.CoffeeShopDigital.repository.FlavorsRepo;
 import org.launchcode.CoffeeShopDigital.repository.MilkTypeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -23,6 +25,9 @@ public class TypeController {
     @Autowired
     private DrinkTypesRepo drinkTypesRepo;
 
+    @Autowired
+    private FlavorsRepo flavorsRepo;
+
     @GetMapping("/milkType")
     @CrossOrigin(allowCredentials = "true", maxAge = 3600)
     public List<MilkType> getMilkType(){
@@ -33,5 +38,10 @@ public class TypeController {
     @CrossOrigin(allowCredentials = "true", maxAge = 3600)
     public List<DrinkTypes> getDrinkTypes(){
         return this.drinkTypesRepo.findAll();
+    }
+
+    @GetMapping("/flavors")
+    public List<Flavors> getFlavors(){
+        return this.flavorsRepo.findAll();
     }
 }

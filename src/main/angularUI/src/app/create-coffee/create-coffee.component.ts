@@ -4,7 +4,7 @@ import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 import { MilkTypes } from '../models/milk-types';
 import { MenuService } from '../services/menu.service';
-import { DrinkTypes } from '../models/drink-types';
+import { Flavors } from '../models/flavors';
 
 @Component({
   selector: 'app-create-coffee',
@@ -17,9 +17,11 @@ export class CreateCoffeeComponent implements OnInit {
 
   milkTypes!: MilkTypes[];
 
+  flavorTypes!: Flavors[];
+
   // milks = ["Please choose an option","Heavy Cream", "Vanilla Sweet Cream", "Non Fat Milk", "2% Milk", "Whole Milk", "Half & Half", "Almond", "Coconut", "Oatmilk", "Soy"];
 
-  flavors = ["Please choose an option","Brown Sugar Syrup", "Caramel Syrup", "Hazelnut Syrup", "Peppermint Syrup", "Vanilla Syrup", "Sugar Free Vanilla Syrup"];
+  //flavors = ["Please choose an option","Brown Sugar Syrup", "Caramel Syrup", "Hazelnut Syrup", "Peppermint Syrup", "Vanilla Syrup", "Sugar Free Vanilla Syrup"];
 
   toppings = ["Please choose an option","Caramel Crunch", "Cookie Crumble", "Chocolate Mint Cookie Sprinkle"];
 
@@ -35,6 +37,11 @@ export class CreateCoffeeComponent implements OnInit {
     this.menuService.getMilkTypes().subscribe((data: MilkTypes[]) => {
       console.log(data);
       this.milkTypes = data;
+    })
+
+    this.menuService.getFlavors().subscribe((data: Flavors[]) => {
+      console.log(data);
+      this.flavorTypes = data;
     })
 
   }
@@ -68,8 +75,8 @@ export class CreateCoffeeComponent implements OnInit {
   logoutUser(){
     console.log("inside logout user");
     console.log(this.user);
-    this.user.email="newUser@email.com";
-    this.user.password="test";
+    // this.user.email="newUser@email.com";
+    // this.user.password="test";
     // this.user.role=""
     // this.user.birthday="";
     this.userService.logout(this.user).subscribe(data => {
