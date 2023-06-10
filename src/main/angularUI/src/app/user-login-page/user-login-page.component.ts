@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
 })
 export class UserLoginPageComponent implements OnInit {
 
-  user:User = new User();
+  user: User = new User();
+  jwtResp: any;
   constructor(private userService: UserService, private router: Router ) { }
 
   ngOnInit(): void {
@@ -21,6 +22,12 @@ export class UserLoginPageComponent implements OnInit {
     this.userService.loginUser(this.user).subscribe(data=>{
       alert("login successful");
       this.router.navigate(['/user-homepage']);
+      this.jwtResp = data;
+      sessionStorage.setItem("userId", this.jwtResp["id"]);
+      sessionStorage.setItem("username", this.jwtResp["email"]);
+      sessionStorage.setItem("name", this.jwtResp["email"].split("@")[0]);
+      sessionStorage.setItem("roles", this.jwtResp["roles"]);
+
     }, error=> alert("Please enter correct username and password"));
   }
 }

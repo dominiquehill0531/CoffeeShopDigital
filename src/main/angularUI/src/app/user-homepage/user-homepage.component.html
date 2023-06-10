@@ -7,18 +7,6 @@
   <title>User Homepage</title>
 </head>
 <body>
-  <header>
-    <div class ="helloname">Hello, Name</div>
-    <div class ="logout">
-      <form (ngSubmit)="goToLoginPage()">
-        <button type="submit">logout</button>
-      </form>
-    </div>
-    <div class="DreamyLogo">
-      <img src="\assets\images\DJC logo.png" alt="DreamyLogo">
-    </div>
-  </header>
-
   <section class="gallery">
     <div class="grid-container">
       <div *ngFor="let drink of drinkTypes" class="grid-item" (click)="gotoOrderItem()">
@@ -27,7 +15,7 @@
       </div>
     </div>
   </section>
-  
+
   <section class="menu">
     <div class="container">
       <div class="box1">
@@ -44,7 +32,7 @@
       <div class="box2">
         <p>Your Favorites!</p>
         <section class="gallery">
-          
+
           <div class="favitem1">
             <img src="\assets\images\almond toffee.png" alt="item 1">
             <div class="itemtext2">item 1
@@ -61,7 +49,7 @@
             </div>
             <div class="favitem1">
               <img src="\assets\images\image(5).webp" alt="item 3">
-              <div class="itemtext2">item 3        
+              <div class="itemtext2">item 3
                 <label>
                   <input type="checkbox" name="item-1-checkbox">
                 </label></div>

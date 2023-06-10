@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c379f3ac-c97d-4afb-b877-53fd1319b55d" name="Changes" comment="ignore workspacexml" />
+    <list default="true" id="c379f3ac-c97d-4afb-b877-53fd1319b55d" name="Changes" comment="Register-user functional">
+      <change beforePath="$PROJECT_DIR$/src/main/angularUI/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/angularUI/src/app/app.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/angularUI/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/angularUI/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/angularUI/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/angularUI/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/angularUI/src/app/create-coffee/create-coffee.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/angularUI/src/app/create-coffee/create-coffee.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/angularUI/src/app/register-user/register-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/angularUI/src/app/register-user/register-user.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/angularUI/src/app/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/angularUI/src/app/services/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/angularUI/src/app/user-login-page/user-login-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/angularUI/src/app/user-login-page/user-login-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/security/service/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/security/service/UserDetailsServiceImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,24 +112,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.google.cloudcode.ide_session_index&quot;: &quot;20230524_0001&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/djh007ktr/LC101/CoffeeShopDigital/src/main/angularclient&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.google.cloudcode.ide_session_index": "20230524_0001",
+    "last_opened_file_path": "C:/Users/djh007ktr/LC101/CoffeeShopDigital/src/main/angularclient",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "JSON"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\djh007ktr\LC101\CoffeeShopDigital\src\main\angularclient" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\djh007ktr\LC101\CoffeeShopDigital\src\main\angularUI\src\app\models\enums" />
       <recent name="C:\Users\djh007ktr\LC101\CoffeeShopDigital" />
       <recent name="C:\Users\djh007ktr\LC101\CoffeeShopDigital\src\main\shop-coffee" />
       <recent name="C:\Users\djh007ktr\LC101\CoffeeShopDigital\src\main\angularclient\src2" />
@@ -200,7 +216,7 @@
         <item itemvalue="Gradle.CoffeeShopDigital [clean]" />
         <item itemvalue="Gradle.CoffeeShopDigital [build]" />
         <item itemvalue="Gradle.CoffeeShopDigital [bootRun]" />
-        <item itemvalue="Gradle.CoffeeShopDigital [build]" />
+        <item itemvalue="Gradle.CoffeeShopDigital [clean]" />
       </list>
     </recent_temporary>
   </component>
@@ -389,7 +405,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main/main" />
+                        <option value="registration" />
                       </list>
                     </value>
                   </entry>

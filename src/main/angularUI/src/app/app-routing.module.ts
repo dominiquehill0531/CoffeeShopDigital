@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminEditPageComponent } from './admin-edit-page/admin-edit-page.component';
 import { UserLoginPageComponent } from './user-login-page/user-login-page.component';
 import { CreateCoffeeComponent } from './create-coffee/create-coffee.component';
-import { OrderItemSpecificsComponent } from './pages/order-item-specifics/order-item-specifics.component';
+import { UserHomepageComponent } from './user-homepage/user-homepage.component';
+import { OrderItemSpecificsComponent } from './order-item-specifics/order-item-specifics.component';
+
 import { HomePageComponent } from './home-page/home-page.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';

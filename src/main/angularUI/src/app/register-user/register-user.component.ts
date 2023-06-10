@@ -20,7 +20,6 @@ export class RegisterUserComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.isRegistrarAdmin();
   }
 
   userRegistration() {
@@ -42,12 +41,19 @@ export class RegisterUserComponent implements OnInit {
     }
   }
 
-  isRegistrarAdmin() {
-    this.userService.readUser().subscribe(data=>{
-      let userDetails: any = data;
-      console.log(userDetails);
-    }, error=> alert("Could not retrieve user details"))
-    .unsubscribe();
+  isRegistrarAdmin(): boolean {
+    let rolesStr: null|string = sessionStorage.getItem("roles");
+    if (rolesStr != null) {
+      let roles: string[] = rolesStr.split(",");
+      if (roles.includes("ADMIN")) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
+
   }
 
 }
