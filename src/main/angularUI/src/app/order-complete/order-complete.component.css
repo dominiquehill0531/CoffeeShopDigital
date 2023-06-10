@@ -1,3 +1,23 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.background::before{
+    content: '';
+    background-image:url("../../../src/assets/images/christina-rumpf-LMzwJDu6hTE-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.2;
+}
+
 img {
     padding: 20px;
     width: 150px;

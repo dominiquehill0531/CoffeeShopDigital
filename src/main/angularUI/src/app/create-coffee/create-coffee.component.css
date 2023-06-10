@@ -51,6 +51,12 @@ img {
     font-size: 20px;
 }
 
+.logout button{
+    height: 30px;
+    width: 10%;
+    border-radius: 40px;
+}
+
 .cart-icon {
     position: absolute;
     top:5%;
@@ -118,7 +124,7 @@ select{
     
 }
 
-button{
+.submit{
     margin-left: 43%;
     margin-top: 5%;
     height: 70px;
@@ -132,7 +138,7 @@ button{
 	text-shadow: none;
 }
 
-button:hover{
+.submit:hover{
     background: #0887e8;
 	color: #fff;
 	border: 1px solid #eee;
