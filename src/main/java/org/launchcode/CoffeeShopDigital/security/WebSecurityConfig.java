@@ -63,6 +63,7 @@ public class WebSecurityConfig {
                 .antMatchers("/api/auth/user-details").anonymous()
                 .antMatchers("/api/type/drinkTypes").anonymous()
                 .antMatchers("/api/type/flavors").anonymous()
+                .antMatchers("/api/type/toppings").anonymous()
                 .antMatchers("/api/auth/register/admin").hasRole("ADMIN")
                 .anyRequest().authenticated();
 

@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { MilkTypes } from '../models/milk-types';
 import { MenuService } from '../services/menu.service';
 import { Flavors } from '../models/flavors';
+import { Toppings } from '../models/toppings';
 
 @Component({
   selector: 'app-create-coffee',
@@ -19,11 +20,13 @@ export class CreateCoffeeComponent implements OnInit {
 
   flavorTypes!: Flavors[];
 
+  toppings!: Toppings[];
+
   // milks = ["Please choose an option","Heavy Cream", "Vanilla Sweet Cream", "Non Fat Milk", "2% Milk", "Whole Milk", "Half & Half", "Almond", "Coconut", "Oatmilk", "Soy"];
 
   //flavors = ["Please choose an option","Brown Sugar Syrup", "Caramel Syrup", "Hazelnut Syrup", "Peppermint Syrup", "Vanilla Syrup", "Sugar Free Vanilla Syrup"];
 
-  toppings = ["Please choose an option","Caramel Crunch", "Cookie Crumble", "Chocolate Mint Cookie Sprinkle"];
+  //toppings = ["Please choose an option","Caramel Crunch", "Cookie Crumble", "Chocolate Mint Cookie Sprinkle"];
 
   selectedMilk = [];
   selectedFlavors = [];
@@ -42,6 +45,10 @@ export class CreateCoffeeComponent implements OnInit {
     this.menuService.getFlavors().subscribe((data: Flavors[]) => {
       console.log(data);
       this.flavorTypes = data;
+    })
+
+    this.menuService.getToppings().subscribe((data: Toppings[]) => {
+      this.toppings = data;
     })
 
   }
