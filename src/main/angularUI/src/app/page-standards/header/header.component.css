@@ -1,0 +1,64 @@
+button {
+  height: 70px;
+  width: 15%;
+  background: teal;
+	color: #fff;
+	border: 1px solid #eee;
+	border-radius: 80px;
+	box-shadow: 5px 5px 5px #eee;
+	text-shadow: none;
+}
+
+button:hover {
+  background: #0887e8;
+	color: #fff;
+	border: 1px solid #eee;
+	border-radius: 80px;
+	box-shadow: 5px 5px 5px #eee;
+	text-shadow: none;
+}
+
+header {
+  top: 5%;
+  font-weight: bold;
+  color:teal;
+  background: #AB804F;
+  font-size: 34px;
+}
+
+img {
+    padding: 20px;
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#cart-icon {
+  grid-area: cart;
+  width: 80px;
+  height: 80px;
+}
+
+#greeting {
+  grid-area: greet;
+}
+
+#greeting-cart {
+  display: grid;
+  grid-template-areas: "greet cart";
+  align-items: center;
+}
+
+#logo {
+  justify: center;
+}

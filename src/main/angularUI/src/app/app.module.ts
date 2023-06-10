@@ -25,27 +25,27 @@ import { CreateCoffeeComponent } from './create-coffee/create-coffee.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Routes, RouterModule } from '@angular/router';
-import { UserHomepageComponent } from './pages/user-homepage/user-homepage.component';
-import { OrderItemSpecificsComponent } from './pages/order-item-specifics/order-item-specifics.component';
+import { UserHomepageComponent } from './user-homepage/user-homepage.component';
+import { OrderItemSpecificsComponent } from './order-item-specifics/order-item-specifics.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
 import { OrderCompleteComponent } from './order-complete/order-complete.component';
+import { HeaderComponent } from './page-standards/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-
     AdminEditPageComponent,
     UserLoginPageComponent,
     CreateCoffeeComponent,
-
     UserHomepageComponent,
     OrderItemSpecificsComponent,
     HomePageComponent,
     RegisterUserComponent,
     CheckoutPageComponent,
     OrderCompleteComponent,
+    HeaderComponent,
 
   ],
   imports: [
