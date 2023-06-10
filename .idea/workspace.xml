@@ -85,8 +85,21 @@
     </option>
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="508816ec-304f-4b30-a8d5-2c96258dcdf6" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="508816ec-304f-4b30-a8d5-2c96258dcdf6" />
+        <option name="url" value="https://github.com/dominiquehill0531/CoffeeShopDigital.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

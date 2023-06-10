@@ -71,8 +71,10 @@ public class AuthController {
                 roles));
     }
 
+//    @CrossOrigin(allowCredentials = "true", maxAge = 3600)
     @PostMapping("/logout")
     public ResponseEntity<MessageResp> logoutUser() {
+        System.out.println("logging the user out");
         SecurityContextHolder.getContext().setAuthentication(null);
         return ResponseEntity.ok().body(new MessageResp("You've been signed out!"));
     }

@@ -9,9 +9,9 @@
 <body>
   <section class="gallery">
     <div class="grid-container">
-      <div *ngFor="let item of ItemsForSale" class="grid-item" (click)="gotoOrderItem()">
-        <img [src]="item.imageUrl">
-        <p>{{ item.name }} - <span class="price">${{ item.price }}</span></p>
+      <div *ngFor="let drink of drinkTypes" class="grid-item" (click)="gotoOrderItem()">
+        <img [src]="drink.imageUrl">
+        <p>{{ drink.name }}<span class="price">${{ drink.price }}</span></p>
       </div>
     </div>
   </section>

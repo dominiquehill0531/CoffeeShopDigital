@@ -51,6 +51,12 @@ img {
     font-size: 20px;
 }
 
+.logout button{
+    height: 30px;
+    width: 10%;
+    border-radius: 40px;
+}
+
 .cart-icon {
     position: absolute;
     top:5%;
@@ -82,7 +88,9 @@ img {
 }
 
 .customization select {
-    margin-left: 30px;
+    margin-left: 10px;
+    width: auto;
+    
 }
 
 .align{
@@ -116,20 +124,21 @@ select{
     
 }
 
-button{
+.submit{
     margin-left: 43%;
     margin-top: 5%;
     height: 70px;
     width: 15%;
     background: #5ab2fa;
 	color: #fff;
+    font-size: 20px;
 	border: 1px solid #eee;
 	border-radius: 80px;
 	box-shadow: 5px 5px 5px #eee;
 	text-shadow: none;
 }
 
-button:hover{
+.submit:hover{
     background: #0887e8;
 	color: #fff;
 	border: 1px solid #eee;
@@ -150,7 +159,7 @@ button:hover{
     
 }
 
-.cup p{
+.cup div{
     float: left;
     margin-top: 7%;
 }
