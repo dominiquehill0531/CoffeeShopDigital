@@ -13,13 +13,13 @@
 
   <div id="user-buttons">
     <div *ngIf="isUserLoggedIn(); else loginButton">
-      <button class="user-button" id="logout" onclick="logoutUser()">Logout</button>
+      <button class="user-button" id="logout" (click)="logout()">Logout</button>
     </div>
     <ng-template #loginButton>
-      <button class="user-button" id="toLogin" onclick="goToLogin()">Login</button>
+      <button class="user-button" id="toLogin" (click)="goToLogin()">Login</button>
     </ng-template>
 
-    <button class="user-button" id="toRegister" onclick="goToRegistration">Register</button>
+    <button class="user-button" id="toRegister" (click)="goToRegistration()">Register</button>
   </div>
 
 
