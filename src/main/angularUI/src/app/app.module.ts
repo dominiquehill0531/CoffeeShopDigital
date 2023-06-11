@@ -18,7 +18,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UserHomepageComponent } from './user-homepage/user-homepage.component';
+//import { UserHomepageComponent } from './user-homepage/user-homepage.component';
 import { AdminEditPageComponent } from './admin-edit-page/admin-edit-page.component';
 import { UserLoginPageComponent } from './user-login-page/user-login-page.component';
 import { CreateCoffeeComponent } from './create-coffee/create-coffee.component';

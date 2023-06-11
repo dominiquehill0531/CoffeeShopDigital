@@ -72,7 +72,7 @@ export class CreateCoffeeComponent implements OnInit {
     this.user.password="test";
     // this.user.role=""
     // this.user.birthday="";
-    this.userService.logout(this.user).subscribe(data => {
+    this.userService.logoutUser().subscribe(data => {
       alert("You've been signed out!")
       this.router.navigate(['/user-login']);
     })
