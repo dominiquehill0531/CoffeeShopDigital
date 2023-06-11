@@ -32,7 +32,7 @@ export class UserService {
   }
 
   logout(user: User): Observable<object> {
-    // console.log("from logout " + user.email);
+    console.log("from logout " + user.email);
     // console.log("from logout " + user.password);
     return this.httpClient.post(`${this.baseUrl}/logout`, user)    
   }

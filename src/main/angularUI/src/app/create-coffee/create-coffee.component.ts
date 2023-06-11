@@ -81,9 +81,9 @@ export class CreateCoffeeComponent implements OnInit {
 
   logoutUser(){
     console.log("inside logout user");
-    console.log(this.user);
-    // this.user.email="newUser@email.com";
-    // this.user.password="test";
+    //console.log(this.user);
+    this.user.email="newUser@email.com";
+    this.user.password="test";
     // this.user.role=""
     // this.user.birthday="";
     this.userService.logout(this.user).subscribe(data => {
