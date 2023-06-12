@@ -3,8 +3,8 @@
 
         <div class="coffee-cup">
             <!-- add code to display the selected drink -->
-            <img src="../../assets/images/coffee-cup.jpeg">
-            <p>Selected Drink</p>
+            <img src="{{selectedDrink?.imageUrl}}">
+            <p>{{selectedDrink?.name}}</p>
         </div>
         <div class="row">
             <div class="column">
@@ -19,13 +19,13 @@
                     <div class="align">
                         <label for="flavor">Flavors</label>
                         <select name="flavor" (change)="selectedFlavorsHandler($event)" id="flavor">
-                            <option *ngFor="let flavor of flavors" >{{flavor}}</option>
+                            <option *ngFor="let flavor of flavors" >{{flavor.name}}</option>
                         </select>
                     </div>
                     <div class="align">
                         <label for="topping">Toppings</label>
                         <select name="topping" (change)="selectedToppingsHandler($event)" id="topping">
-                            <option *ngFor="let topping of toppings" >{{topping}}</option>
+                            <option *ngFor="let topping of toppings" >{{topping.name}}</option>
                         </select>
                     </div>
                 </div>
@@ -68,4 +68,5 @@
         </div>
 <!--    </div>-->
         <button (click)="goToOrder()">Order Now</button>
+
 </body>
