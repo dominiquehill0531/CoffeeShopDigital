@@ -28,7 +28,7 @@ export class DrinkpageComponent implements OnInit {
 
   addToCart(){
     this.cartSerive.addToCart(this.drink);
-    this.router.navigateByUrl('/home/cart-page');
+    this.router.navigateByUrl('/create-coffee');
   }
 
   
