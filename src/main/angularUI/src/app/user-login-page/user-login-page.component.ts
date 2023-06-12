@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
-import { UserService } from '../services/user.service';
+import { UserService } from '../_services/user.service';
+import { TokenStorageService } from '../_services/token-storage.service'
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,22 +13,39 @@ export class UserLoginPageComponent implements OnInit {
 
   user: User = new User();
   jwtResp: any;
-  constructor(private userService: UserService, private router: Router ) { }
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = "";
+  roles: string[] = [];
+
+
+  constructor(private userService: UserService, private tokenStorage: TokenStorageService, private router: Router ) { }
 
   ngOnInit(): void {
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+      this.roles = this.tokenStorage.getUser().roles;
+    }
   }
 
-  userLogin(){
-    console.log(this.user);
-    this.userService.loginUser(this.user).subscribe(data=>{
-      alert("login successful");
-      this.router.navigate(['/user-homepage']);
-      this.jwtResp = data;
-      sessionStorage.setItem("userId", this.jwtResp["id"]);
-      sessionStorage.setItem("username", this.jwtResp["email"]);
-      sessionStorage.setItem("name", this.jwtResp["email"].split("@")[0]);
-      sessionStorage.setItem("roles", this.jwtResp["roles"]);
-
-    }, error=> alert("Please enter correct username and password"));
+  userLogin(): void {
+    this.userService.loginUser(this.user).subscribe(
+      data => {
+        alert("login successful");
+        this.tokenStorage.saveToken(data['accessToken']);
+        this.tokenStorage.saveUser(data);
+        let nextEmail = this.tokenStorage.getUser()['email'];
+        let nextName = nextEmail.slice(0, nextEmail.indexOf("@"));
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        this.roles = this.tokenStorage.getUser().roles;
+        sessionStorage.setItem("name", nextName);
+        this.router.navigate(['/user-homepage']);
+      },
+      error => {
+        alert("Please enter correct username and password");
+        this.isLoginFailed = true;
+      }
+    );
   }
 }

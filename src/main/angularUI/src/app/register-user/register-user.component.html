@@ -6,22 +6,63 @@
 
   <hr id="line-css">
 
-  <h3>Register a New User</h3>
-
-  <form (ngSubmit)="userRegistration()">
+  <h3 *ngIf="!isSuccessful">Register a New User</h3>
+  <h3 *ngIf="isSuccessful">Registration Success!!</h3>
+  <form
+    *ngIf="!isSuccessful"
+    #regForm="ngForm"
+    name="regForm"
+    (ngSubmit)="regForm.form.valid && userRegistration()"
+  >
 
     <label>Name<br>
-    <input type="text" [(ngModel)]="user.name" id="name" name="name" placeholder="Name" autocomplete="given-name"></label><br>
+    <input
+      type="text" [(ngModel)]="user.name" id="name"
+      name="name" placeholder="Name" autocomplete="given-name"
+      required #name="ngModel"
+    ></label><br>
+    <div class="alert alert-danger" *ngIf="name.errors && regForm.submitted">
+      <div *ngIf="name.errors['required']">Username is required</div>
+    </div><br>
 
     <label>Email<br>
-    <input type="text" [(ngModel)]="user.email" id="email" name="email" placeholder="Email" autocomplete="email"></label><br>
+    <input
+      type="text" class="form-control" [(ngModel)]="user.email" id="email"
+      name="email" placeholder="Email" autocomplete="email"
+      required email #email="ngModel"
+    ></label><br>
+    <div class="alert alert-danger" *ngIf="email.errors && regForm.submitted">
+      <div *ngIf="email.errors['required']">Email is required</div>
+      <div *ngIf="email.errors['email']">Email must be a valid email address></div>
+    </div><br>
 
     <label>Birthday<br>
-    <input type="text" [(ngModel)]="user.birthday" id="birthday" name="birthday" placeholder="MM/DD"></label><br>
+    <input type="text" class="form-control" [(ngModel)]="user.birthday" id="birthday"
+           name="birthday" placeholder="MM/DD"
+           required pattern="{{ bdayRegexp }}" #birthday="ngModel"
+    ></label><br>
+    <div class="alert-danger" *ngIf="birthday.errors && regForm.submitted">
+      <div *ngIf="birthday.errors['required']">Birthday is required</div>
+      <div *ngIf="birthday.errors['pattern']">Birthday should be entered in format "MM/DD", including slash</div>
+    </div><br>
 
     <label>Password<br>
-    <input type="password" [(ngModel)]="user.password" id="password" name="password" placeholder="Password" autocomplete="new-password"><br>
-    <input type="password" [(ngModel)]="confirmPassword" id="confirmPw" name="confirmPassword" placeholder="Confirm Password"></label><br>
+    <input
+      type="password" class="form-control" [(ngModel)]="user.password" id="password"
+      name="password" placeholder="Password" autocomplete="new-password"
+      required minlength="8" maxlength="120" #password="ngModel"
+    ><br>
+    <div class="alert-danger" *ngIf="password.errors && regForm.submitted">
+      <div *ngIf="password.errors['required']">Password is required</div>
+      <div *ngIf="password.errors['minlength']">Password must be at least 8 characters</div>
+      <div *ngIf="password.errors['maxlength']">Password too long, must be less than 120 characters</div>
+    </div><br>
+    <input
+      type="password" class="form-control" [(ngModel)]="confirmPassword" id="confirmPw"
+      name="confirmPassword" placeholder="Confirm Password"
+      required
+    ></label><br>
+    <div class="alert-danger" *ngIf="!doPasswordsMatch(regForm)">Password entries must match exactly</div><br>
 
     <label>Roles
       <div>
@@ -32,7 +73,7 @@
       </div>
     </label>
             <!-- Link to User Home Page once created -->
-    <button type="submit"> Register </button><br>
+    <button id="submitButton" type="submit"> Register </button><br>
 
   </form>
 

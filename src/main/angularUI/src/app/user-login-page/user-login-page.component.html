@@ -1,12 +1,5 @@
 <body id ="container">
 
-    <header id="header">
-
-      <!-- Link to hompage once it is created -->
-      <button type="submit" id="homeBtn"> Return Home </button>
-
-    </header>
-
       <div class="user-login-style" id="box">
 
         <img src="../../assets/images/DJC logo.png" id="logo-style" alt="Coffee Shop Logo" height="100px">
@@ -15,16 +8,43 @@
 
             <h3>Log In</h3>
 
-              <form (ngSubmit)="userLogin()">
+              <form
+                name="login"
+                (ngSubmit)="loginForm.form.valid && userLogin()"
+                #loginForm="ngForm"
+                novalidate
+              >
 
-                <label for="email"></label><br>
-                <input type="text" [(ngModel)]="user.email" id="email" name="email" placeholder="Email"><br>
+                <label>Email<br>
+                <input
+                  type="text" class="form-control" [(ngModel)]="user.email" id="email"
+                  name="email" placeholder="Email" autocomplete="email"
+                  required #email="ngModel"
+                ></label><br>
 
-                <label for="password"></label><br>
-                <input type="text" [(ngModel)]="user.password" id="password" name="password" placeholder="Password"><br><br>
+                <label for="password">Password<br>
+                <input
+                  type="password" class="form-control" [(ngModel)]="user.password" id="password"
+                  name="password" placeholder="Password"
+                  required #password="ngModel"
+                ></label><br>
 
-                <button type="submit"> Log In </button>
+                <div
+                  *ngIf="(email.errors || password.errors) && loginForm.submitted"
+                  class="alert alert-danger" role="alert"
+                >
+                  Both email and password are required!
+                </div>
+                <br>
 
+                <button type="submit" id="submitButton"> Log In </button>
+                <div
+                  class="alert alert-danger"
+                  role="alert"
+                  *ngIf="loginForm.submitted && isLoginFailed"
+                >
+                  Login failed: {{ errorMessage }}
+                </div>
               </form><br>
 
               <p>Don't have an account?<br>

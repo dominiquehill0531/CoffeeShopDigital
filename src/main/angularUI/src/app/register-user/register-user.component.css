@@ -6,6 +6,26 @@ body {
   background-position: center;
 }
 
+button {
+  height: 70px;
+  width: 50%;
+  background: teal;
+	color: #fff;
+	border: 1px solid #eee;
+	border-radius: 80px;
+	box-shadow: 5px 5px 5px #eee;
+	text-shadow: none;
+}
+
+button:hover {
+  background: #0887e8;
+	color: #fff;
+	border: 1px solid #eee;
+	border-radius: 80px;
+	box-shadow: 5px 5px 5px #eee;
+	text-shadow: none;
+}
+
 h3 {
   font-weight: 600;
 }
@@ -23,22 +43,14 @@ h3 {
 
 
 #box {
-  grid-area: log;
+  position: relative;
+  top: 10%;
   margin: auto;
   border-radius: 40px;
 }
 
 #container {
-  display: grid;
-  width: 100%;
-  margin: auto;
-  justify-content: center;
-  grid-template-columns: 1fr;
-  grid-template-rows: 100px 80vh 10vh;
-  grid-template-areas:
-    "hd"
-    "log"
-    "ft";
+  height: 100%;
 }
 
 #footer {
@@ -60,4 +72,10 @@ h3 {
 
 #signUpStyle {
   color: red;
+}
+
+#submitButton {
+  height: 50px;
+  margin: 8px;
+  box-shadow: 3px 3px 3px #eee;
 }

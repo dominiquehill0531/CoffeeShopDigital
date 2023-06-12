@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/services/user.service';
-import { Router } from '@angular/router';
+import { UserService } from 'src/app/_services/user.service';
+import { TokenStorageService} from 'src/app/_services/token-storage.service';
+import { Router, Event, NavigationEnd } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -9,20 +10,37 @@ import { Observable } from 'rxjs';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  name = sessionStorage.getItem("name");
-  private static guestId = 1;
+  currentUser: any;
+  name: any;
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(
+        private token: TokenStorageService,
+        private userService: UserService,
+        private router: Router) { }
 
   ngOnInit(): void {
-    if (this.name == null) {
-      this.name = `Guest${HeaderComponent.guestId}`;
-      HeaderComponent.guestId++;
+    if (sessionStorage.length == 0) {
+      sessionStorage.setItem("name", "Guest");
+    } else {
+      this.router.events.subscribe(
+        (event: any) => {
+          if (event instanceof NavigationEnd) {
+            if (this.token.getUser()) {
+              let email = this.token.getUser()['email'];
+              let nextName = email.slice(0, email.indexOf("@"));
+              this.name = nextName;
+            }
+          }
+        }
+      );
     }
+
+
   }
 
   logout(): void {
-    this.userService.logoutUser();
+    this.token.signOut();
+    this.name = "Guest";
     this.router.navigate(['/']);
   }
 
@@ -35,6 +53,15 @@ export class HeaderComponent implements OnInit {
   }
 
   isUserLoggedIn(): boolean {
+    this.name = sessionStorage.getItem("name");
     if (this.name == null || this.name.indexOf("Guest") == 0) {return false;} else {return true;}
+  }
+
+  isNotRegistration(): boolean {
+    if (this.router.url != '/register-user') {return true;} else {return false;}
+  }
+
+  isNotLoginPg(): boolean {
+    if (this.router.url != '/user-login') {return true;} else {return false;}
   }
 }

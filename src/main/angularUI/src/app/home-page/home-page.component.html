@@ -10,25 +10,16 @@
                 </ul>
             </nav>
         </aside>
-    
+
         <section >
             <div class="menu">
                 <h1>Dreammy Joys Coffee</h1>
-                    <form>
-                        <div class="button"(click)="gotoUserLogin()">
-                            <a routerLink="user-login" class="button" routerLinkActive="active" >
-                            <button type="submit">Login</button>
-                            </a>
-                        </div>
-                        <input type="text" placeholder=" Search...." name="search">
-                        <button type="submit">Submit</button>
-                    </form>
                     <hr>
                     <div class="gallery">
                         <table id="itemTable">
                             <tr id="coffeeItems">
                                 <td>
-                                    <div class="item"(click)="gotoOrderItem()">
+                                    <div class="item" (click)="gotoOrderItem()">
                                         <a routerLink="order-item-specifics" class="item" routerLinkActive="active">
                                             <img src="/assets/images/Latte.jpg"></a>
                                         <span class="caption">Latte</span>
@@ -99,7 +90,7 @@
                             </tr>
 
                         </table>
-                    </div>       
+                    </div>
                 <div class="container1">
                     <div class="about-us">
                         <h3>About us:</h3>

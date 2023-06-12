@@ -32,6 +32,8 @@ import { RegisterUserComponent } from './register-user/register-user.component';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
 import { OrderCompleteComponent } from './order-complete/order-complete.component';
 import { HeaderComponent } from './page-standards/header/header.component';
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -69,9 +71,8 @@ import { HeaderComponent } from './page-standards/header/header.component';
     MatBadgeModule,
     MatSnackBarModule,
     BrowserAnimationsModule,
-
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

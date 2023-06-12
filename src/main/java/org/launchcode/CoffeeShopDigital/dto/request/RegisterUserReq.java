@@ -46,8 +46,16 @@ public class RegisterUserReq {
     public Set<Role> getRole() {
         ArrayList<Role> roleArray = new ArrayList<>();
         for (String role : this.role) {
-            Role roleToAdd = new Role(ERole.valueOf(role));
-            roleArray.add(roleToAdd);
+            if (role == "ADMiN") {
+                Role adminRole = roleRepository.findByName(ERole.ADMIN)
+                        .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+                roleArray.add(adminRole);
+            }
+            if (role == "USER") {
+                Role userRole = roleRepository.findByName(ERole.USER)
+                        .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+                roleArray.add(userRole);
+            }
         }
         return new HashSet<>(roleArray);
     }

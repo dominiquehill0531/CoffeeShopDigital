@@ -1,7 +1,6 @@
 package org.launchcode.CoffeeShopDigital.controller;
 
 import org.launchcode.CoffeeShopDigital.dto.request.LoginReq;
-import org.launchcode.CoffeeShopDigital.dto.request.RegisterAdminReq;
 import org.launchcode.CoffeeShopDigital.dto.request.RegisterUserReq;
 import org.launchcode.CoffeeShopDigital.dto.response.JwtResp;
 import org.launchcode.CoffeeShopDigital.dto.response.MessageResp;
@@ -49,7 +48,7 @@ public class AuthController {
     User newAdmin;
 
 
-    @CrossOrigin(allowCredentials = "true", maxAge = 3600)
+    @CrossOrigin(allowCredentials = "true")
     @PostMapping("/login")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginReq loginRequest) {
 
@@ -71,14 +70,7 @@ public class AuthController {
                 roles));
     }
 
-//    @CrossOrigin(allowCredentials = "true", maxAge = 3600)
-    @PostMapping("/logout")
-    public ResponseEntity<MessageResp> logoutUser() {
-        System.out.println("logging the user out");
-        SecurityContextHolder.getContext().setAuthentication(null);
-        return ResponseEntity.ok().body(new MessageResp("You've been signed out!"));
-    }
-
+    @CrossOrigin(allowCredentials = "true")
     @PostMapping("/register/user")
     public ResponseEntity<?> registerUser(@Valid @RequestBody RegisterUserReq registerUserReq) {
         if (userRepository.existsByEmail(registerUserReq.getEmail())) {
@@ -95,25 +87,6 @@ public class AuthController {
         userRepository.save(newUser);
 
         return ResponseEntity.ok(new MessageResp("User registered successfully!"));
-    }
-
-    @PostMapping("/register/admin")
-    public ResponseEntity<?> registerAdmin(@Valid @RequestBody RegisterAdminReq registerAdminReq) {
-        if (userRepository.existsByEmail(registerAdminReq.getEmail())) {
-            return ResponseEntity
-                    .badRequest()
-                    .body(new MessageResp("Error: User already exists, upgrade ${registerAdminReq.getName()} to Admin instead!"));
-        }
-        // Create new admin User account
-        newAdmin = new User(registerAdminReq.getName(),
-                registerAdminReq.getBirthday(),
-                registerAdminReq.getEmail(),
-                encoder.encode(registerAdminReq.getPassword()),
-                registerAdminReq.getRole());
-
-        userRepository.save(newAdmin);
-
-        return ResponseEntity.ok(new MessageResp("Admin registered successfully!"));
     }
 
     //TODO: Fix duplicate role creation (see Bezkoder originial @ https://www.bezkoder.com/spring-boot-login-example-mysql/
