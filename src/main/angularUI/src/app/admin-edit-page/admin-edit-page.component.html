@@ -3,7 +3,7 @@
     <a href="/">
         <img src="../../assets/images/DJC logo.png" alt="logo">
     </a>
-    
+
     <div id="main">
         <!-- have to add code to display selected item -->
         <h2>Edit [Item Name]</h2> <button>Delete Item</button>
@@ -13,32 +13,53 @@
 <section class="menu">
     <div class="container">
       <div class="box1">
-        <p *ngFor ="let menulist of menuList"> {{menulist}}</p>    
+        <p *ngFor ="let menulist of menuList"> {{menulist}}</p>
       </div>
     </div>
   </section>
 
-<table>
-    <tr>
-        <td>Name</td>
-        <!-- get the name of menu item -->
-        <td>Name of Item</td>
-    </tr>
-    <tr>
-        <td>Category</td>
-        <!-- get the category of menu item -->
-        <td>Name of category</td>
-    </tr>
-    <tr>
-      <td>Description</td>
-      <!-- get the description of menu item -->
-      <td>description</td>
-  </tr>
-  <tr>
-    <td>Price</td>
-    <!-- get the price of menu item -->
-    <td>amount in $$</td>
-</tr>
-</table>
 
-<button class="save">Save Changes</button>
+<div id="main">
+
+  <form (ngSubmit)="submitForm()">
+
+    <div class ="row">
+      <div class = "col">
+        <label for="drinkName"></label><br>
+        <input type="text" id="drinkNameField" name="drinkName" [(ngModel)]="drinkTypes[0].name" placeholder="Drink Name" required>
+      </div>
+
+      <div class = "col">
+        <label for="drinkPrice"></label><br>
+        <input type="text" id="drinkPriceField" name="drinkPrice" [(ngModel)]="drinkTypes[0].price" placeholder="Drink Price" required><br><br>
+      </div>
+    </div>
+
+    <div class = "row">
+      <label for="imageUrl"></label><br>
+      <input type="text" id="imageUrlField" name="ImageUrl" [(ngModel)]="drinkTypes[0].imageUrl" placeholder="Image Url" required><br><br>
+    </div>
+
+    <button type="submit">Add Drink</button>
+
+  </form>
+
+</div>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let drinkType of drinkTypes">
+      <td> {{drinkType.name}} </td>
+      <td> {{drinkType.price}} </td>
+      <td> {{drinkType.imageUrl}} </td>
+    </tr>
+  </tbody>
+</table>
