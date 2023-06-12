@@ -15,21 +15,21 @@ interface Item {
 })
 
 export class UserHomepageComponent implements OnInit {
-  // ItemsForSale: Item[] = [
-  //   { name: 'Coffee', price: 2.99,imageUrl: '/assets/images/almond toffee.png'},
-  //   { name: 'Capachino', price: 2.99,imageUrl: '/assets/images/almond toffee.png'},
-  //   { name: 'Tea', price: 2.99,imageUrl: '/assets/images/almond toffee.png'},
-  //   { name: 'Bubble Tea', price: 2.99,imageUrl: '/assets/images/almond toffee.png'},
-  //   { name: 'Expresso', price: 2.99,imageUrl: '/assets/images/almond toffee.png'},
-  //   { name: 'Flower Tea', price: 2.99,imageUrl: '/assets/images/almond toffee.png'},
-  //   { name: 'Coffee', price: 2.99,imageUrl: '/assets/images/almond toffee.png'},
-  //   { name: 'Coffee', price: 2.99,imageUrl: '/assets/images/almond toffee.png'},
-  //   { name: 'Coffee', price: 2.99,imageUrl: '/assets/images/almond toffee.png'},
-  // ]
+  ItemsForSale: Item[] = [
+    { name: 'Coffee', price: 2.99,imageUrl: '/assets/images/almond toffee.png'},
+    { name: 'Capachino', price: 2.99,imageUrl: '/assets/images/almond toffee.png'},
+    { name: 'Tea', price: 2.99,imageUrl: '/assets/images/almond toffee.png'},
+    { name: 'Bubble Tea', price: 2.99,imageUrl: '/assets/images/almond toffee.png'},
+    { name: 'Expresso', price: 2.99,imageUrl: '/assets/images/almond toffee.png'},
+    { name: 'Flower Tea', price: 2.99,imageUrl: '/assets/images/almond toffee.png'},
+    { name: 'Coffee', price: 2.99,imageUrl: '/assets/images/almond toffee.png'},
+    { name: 'Coffee', price: 2.99,imageUrl: '/assets/images/almond toffee.png'},
+    { name: 'Coffee', price: 2.99,imageUrl: '/assets/images/almond toffee.png'},
+  ]
 
   drinkTypes!: DrinkTypes[];
-  
-  constructor(private router: Router,private menuService: MenuService) { 
+
+  constructor(private router: Router,private menuService: MenuService) {
   }
 
   ngOnInit(): void {
@@ -45,4 +45,13 @@ export class UserHomepageComponent implements OnInit {
   goToLoginPage() {
     this.router.navigate(['/user-login']);
   }
+    getLowestPrice(): number {
+      let lowestPrice = Infinity;
+      for (const drink of this.drinkTypes) {
+        if (drink.price < lowestPrice) {
+          lowestPrice = drink.price;
+        }
+      }
+      return lowestPrice;
+    }
 }
