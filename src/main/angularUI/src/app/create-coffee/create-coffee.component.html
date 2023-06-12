@@ -25,7 +25,7 @@
                     <div class="align">
                         <label for="topping">Toppings</label>
                         <select name="topping" (change)="selectedToppingsHandler($event)" id="topping">
-                            <option *ngFor="let topping of toppings" >{{topping}}</option>
+                            <option *ngFor="let topping of toppings" >{{topping.name}}</option>
                         </select>
                     </div>
                 </div>

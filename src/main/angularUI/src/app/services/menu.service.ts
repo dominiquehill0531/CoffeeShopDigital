@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { MilkTypes } from '../models/milk-types';
 import { DrinkTypes } from '../models/drink-types';
 import { Flavors } from '../models/flavors';
+import { Toppings } from '../models/toppings';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +31,9 @@ export class MenuService {
 
   getFlavors(): Observable<Flavors[]> {
     return this.http.get<Flavors[]>(`${this.baseUrl}/flavors`);
+  }
+
+  getToppings(): Observable<Toppings[]> {
+    return this.http.get<Toppings[]>(`${this.baseUrl}/toppings`);
   }
 }
