@@ -1,16 +1,8 @@
 <header class="flex-header">
 
   <div id="greeting-cart">
-    <div id="greeting">Hello, {{ name }}!</div>
-    <a href="/create-coffee">
-      <img id="cart-icon" src="../assets/images/cart-icon.jpeg">
-    </a>
+    <div id="greeting"><a href="#" routerLink="/" class="logo">Hello, {{ name }}!</a></div>
   </div>
-
-  <a href="/">
-    <img id="logo" src="../assets/images/DJC logo.png" alt="logo">
-  </a>
-
   <div id="user-buttons">
     <div *ngIf="isUserLoggedIn(); else loginButton">
       <button class="user-button" id="logout" (click)="logout()">Logout</button>
@@ -21,9 +13,6 @@
 
     <button class="user-button" id="toRegister" (click)="goToRegistration()">Register</button>
   </div>
-
-
-
-
-
 </header>
+
+<router-outlet></router-outlet>

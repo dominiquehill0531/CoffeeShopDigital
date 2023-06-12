@@ -1,0 +1,45 @@
+
+<div class="container">
+    <ul>
+        <li *ngFor="let cartItem of cart.items">
+            <div>
+                <img [src]="cartItem.drink.imageUrl" [alt]="cartItem.drink.name"> 
+            </div>
+            <div>
+                <a routerLink="/drink/{{cartItem.drink.id}}">
+                    {{cartItem.drink.name}}
+                </a>
+            </div>
+            <div>
+                <select #quantitySelect (change)="changeQuantity(cartItem,quantitySelect.value)">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>   
+                </select>
+            </div>
+            <div>
+                {{cartItem.price | currency}}
+            </div>
+            <div>
+                <button class="remove-button" (click)="removeFromCart(cartItem)">
+                    Remove
+                </button>
+            </div>
+        </li>
+    </ul>
+    <div class="checkout">
+        <div>
+            <div class="drinks-count">Total:  {{cart.items.length}}</div>
+            <div class="total-price">{{cart.totalPrice| currency}}</div>
+        </div>
+
+        <div>
+            <button>
+                <a routerLink="/order-complete"> Check Out</a>
+               
+            </button>
+        </div>
+    </div>
+</div>
