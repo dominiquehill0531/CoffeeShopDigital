@@ -1,0 +1,13 @@
+div {
+    display: flex;
+    justify-content: right;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+div button{
+    background-color: red;
+    opacity: .8;
+    color:white;
+    outline: none;
+}

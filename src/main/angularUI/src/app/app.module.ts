@@ -32,6 +32,13 @@ import { RegisterUserComponent } from './register-user/register-user.component';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
 import { OrderCompleteComponent } from './order-complete/order-complete.component';
 import { HeaderComponent } from './page-standards/header/header.component';
+import { UserHeaderComponent } from './user-header/user-header.component';
+import { HomeComponent } from './home/home.component';
+import { RatingModule } from 'ng-starrating';
+import { SearchComponent } from './search/search.component';
+import { TagsComponent } from './tags/tags.component';
+import { DrinkpageComponent } from './drinkpage/drinkpage.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +53,13 @@ import { HeaderComponent } from './page-standards/header/header.component';
     CheckoutPageComponent,
     OrderCompleteComponent,
     HeaderComponent,
+    UserHeaderComponent,
+    HomeComponent,
+    SearchComponent,
+    TagsComponent,
+    DrinkpageComponent,
+    CartPageComponent,
+
 
   ],
   imports: [
@@ -69,6 +83,7 @@ import { HeaderComponent } from './page-standards/header/header.component';
     MatBadgeModule,
     MatSnackBarModule,
     BrowserAnimationsModule,
+    RatingModule,
 
   ],
   providers: [],

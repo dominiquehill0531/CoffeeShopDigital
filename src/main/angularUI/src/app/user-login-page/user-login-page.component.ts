@@ -30,4 +30,8 @@ export class UserLoginPageComponent implements OnInit {
 
     }, error=> alert("Please enter correct username and password"));
   }
+
+  goLogin(){
+    this.router.navigate(['/home']);
+  }
 }
