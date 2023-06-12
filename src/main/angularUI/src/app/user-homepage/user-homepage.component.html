@@ -7,11 +7,12 @@
   <title>User Homepage</title>
 </head>
 <body>
-<section class="gallery">
-  <div class="grid-container">
-    <div *ngFor="let drink of drinkTypes" class="grid-item" (click)="gotoOrderItem()">
-      <img [src]="drink.imageUrl">
-      <p><span class="name">{{ drink.name }}</span></p><p><span class="price">{{ drink.price }}</span></p>
+  <section class="gallery">
+    <div class="grid-container">
+      <div *ngFor="let drink of drinkTypes" class="grid-item">
+        <a routerLink="/create-coffee/{{drink.id}}"><img [src]="drink.imageUrl"></a>
+        <p>{{ drink.name }}<span class="price">${{ drink.price }}</span></p>
+      </div>
     </div>
   </div>
 </section>
