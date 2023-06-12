@@ -1,6 +1,7 @@
 package org.launchcode.CoffeeShopDigital.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -12,7 +13,7 @@ public class Role {
     @Enumerated(EnumType.STRING)
     private ERole name;
     @ManyToMany(mappedBy = "roles")
-    private Set<User> users;
+    private Set<User> users = new HashSet<>();
 
     public Role() {    }
 

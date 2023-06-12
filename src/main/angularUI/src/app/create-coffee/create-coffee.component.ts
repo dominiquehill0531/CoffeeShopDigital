@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
-import { UserService } from '../services/user.service';
+import { UserService } from '../_services/user.service';
 import { Router } from '@angular/router';
 import { MilkTypes } from '../models/milk-types';
-import { MenuService } from '../services/menu.service';
+import { MenuService } from '../_services/menu.service';
 import { DrinkTypes } from '../models/drink-types';
 
 @Component({
@@ -62,20 +62,6 @@ export class CreateCoffeeComponent implements OnInit {
   order(){
     console.log("button clicked");
     this.router.navigate(['/order-complete'])
-  }
-
-
-  logoutUser(){
-    console.log("inside logout user");
-    console.log(this.user);
-    this.user.email="newUser@email.com";
-    this.user.password="test";
-    // this.user.role=""
-    // this.user.birthday="";
-    this.userService.logout(this.user).subscribe(data => {
-      alert("You've been signed out!")
-      this.router.navigate(['/user-login']);
-    })
   }
 
 }

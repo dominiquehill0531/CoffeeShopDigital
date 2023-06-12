@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { Routes, RouterModule } from '@angular/router';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -18,22 +19,21 @@ import { MatTableModule } from '@angular/material/table';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
+
 import { UserHomepageComponent } from './user-homepage/user-homepage.component';
 import { AdminEditPageComponent } from './admin-edit-page/admin-edit-page.component';
 import { UserLoginPageComponent } from './user-login-page/user-login-page.component';
 import { CreateCoffeeComponent } from './create-coffee/create-coffee.component';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { Routes, RouterModule } from '@angular/router';
-import { UserHomepageComponent } from './user-homepage/user-homepage.component';
 import { OrderItemSpecificsComponent } from './order-item-specifics/order-item-specifics.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
 import { OrderCompleteComponent } from './order-complete/order-complete.component';
 import { HeaderComponent } from './page-standards/header/header.component';
-import { authInterceptorProviders } from './_helpers/auth.interceptor';
-
 
 @NgModule({
   declarations: [

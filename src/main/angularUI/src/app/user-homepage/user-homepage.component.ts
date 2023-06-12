@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DrinkTypes } from '../models/drink-types';
-import { MenuService } from '../services/menu.service';
+import { MenuService } from '../_services/menu.service';
 // import {}
 interface Item {
   price: number,
@@ -28,8 +28,8 @@ export class UserHomepageComponent implements OnInit {
   // ]
 
   drinkTypes!: DrinkTypes[];
-  
-  constructor(private router: Router,private menuService: MenuService) { 
+
+  constructor(private router: Router,private menuService: MenuService) {
   }
 
   ngOnInit(): void {
