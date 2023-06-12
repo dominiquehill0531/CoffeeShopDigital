@@ -56,10 +56,9 @@ public class WebSecurityConfig {
             .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
             .authorizeRequests()
+                .antMatchers("/api/type/**").permitAll()
                 .antMatchers("/api/auth/login/**").anonymous()
                 .antMatchers("/api/auth/register/**").permitAll()
-                .antMatchers("/api/type/milkType").permitAll()
-                .antMatchers("/api/type/drinkTypes").permitAll()
                 .anyRequest().authenticated();
 
         http.authenticationProvider(authenticationProvider());

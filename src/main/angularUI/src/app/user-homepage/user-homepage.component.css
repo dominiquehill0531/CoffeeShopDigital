@@ -44,31 +44,42 @@
   display: flex;
   justify-content: center;
   color:teal;
+
 }
 
 .grid-container {
-  padding: 10%;
+  padding-top: 5%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 20px;
+  grid-gap:  20px;
   max-width: 800px;
   margin: 0 auto;
+
+
 }
 
 .grid-item {
-  padding: 12px;
+  padding: 0;
   text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+
 }
 
 .grid-item img {
   width: 100%;
-  height: auto;
+  min-height: 55%;
+  max-height: 55%;
   margin-bottom: 1px;
   border-radius: 20px;
-}
 
+}
+.name {
+  font-weight: bold;
+}
 .price {
   font-weight: bold;
+
 }
 
 .box1 {
@@ -90,26 +101,28 @@
   margin: 0;
 }
 .box2 {
-  border: 2px solid #000000;
+  position: absolute;
   padding: 20px;
   width: 200px;
   height: 720px;
-  position: absolute;
   bottom: 0;
-  right: 10%;
-  top: 50%;
-  transform: translateY(-35%);
-  font-size: 24px;
+  left: 80%;
+  top: 20%;
+
+  font-size: 18px;
   font-weight: bold;
   color:teal;
 
+  padding-top: 5%;
 
+  justify-content: center;
+  color:teal;
 }
 
 .box2 img {
+  margin-top: 15%;
   width:4em;
   height: 4em;
-  margin: 50px 20px -5px -5px;
   margin-left: -5px;
   border-radius: 20px;
 }
@@ -117,12 +130,10 @@ p {
   font-size: 2em;
   line-height: 1.5;
   text-align: center;
+  background: linear-gradient(rgba(242, 213, 169, 0.685), rgba(242, 213, 169, 0.8));
+  border-radius: 20px;
 }
-.favitem1{
-  text-align: center;
-  margin: -30px;
-  font-size: 28px;
-}
+
 
 
 body {

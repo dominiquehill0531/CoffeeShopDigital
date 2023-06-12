@@ -1,5 +1,5 @@
 button {
-  height: 70px;
+  height: 20px;
   width: 100%;
   background: teal;
 	color: #fff;
@@ -19,7 +19,7 @@ button:hover {
 }
 
 header {
-  height: 200px;
+  height: 60px;
   font-weight: bold;
   color:teal;
   background: #AB804F;

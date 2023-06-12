@@ -48,4 +48,8 @@ export class UserLoginPageComponent implements OnInit {
       }
     );
   }
+
+  goLogin(){
+    this.router.navigate(['/home']);
+  }
 }

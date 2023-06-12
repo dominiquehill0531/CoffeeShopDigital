@@ -22,6 +22,19 @@
 .logout button:hover {
   cursor: pointer;
 }
+.ordermore {
+  position: absolute;
+  top: 6%;
+  right: 40px;
+  margin-right: 10px;
+  transform: translateY(-50%);
+  font-weight: bold;
+  color: teal;
+  font-size: 1em;
+}
+.ordermore button:hover {
+  cursor: pointer;
+  }
 .DreamyLogo {
   margin: 25px;
   width: 500px;
@@ -42,6 +55,41 @@
   border-radius: 50%;
   overflow: hidden;
 }
+.shopping-cart {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.shopping-cart img {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+}
+
+.shopping-cart ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  list-style: none;
+}
+
+.shopping-cart ul.show {
+  display: block;
+}
+
+.shopping-cart ul li {
+  margin-bottom: 10px;
+}
+
+.shopping-cart ul li .price {
+  font-weight: bold;
+}
 .galleries-container {
   display: flex;
 }
@@ -50,61 +98,75 @@
 
 .galleries-container {
   position: relative;
-  top:14%;
-  left: 14%;
+  top:1%;
+  left: 15%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px; /* Adjust this value to make the galleries closer */
+  grid-gap: 0;
   max-width: 60%;
+      width: 100%;
+      min-height: 55%;
+      max-height: 55%;
 }
 
 
 .gallery:nth-child(1) .grid-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 2px;
+    width: 100%;
+    min-height: 55%;
+    max-height: 55%;
 }
 .gallery:nth-child(1) .grid-container img {
-  width: 4em;
-  height: auto;
+    width: 100%;
+    min-height: 55%;
+    max-height: 55%;
 }
 
 .gallery:nth-child(2) .grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2px;
-}
+    width: 100%;
+    min-height: 55%;
+    max-height: 55%;
+    }
 .gallery:nth-child(2) .grid-container img {
-  width: 4em;
-  height: auto;
+    width: 100%;
+    min-height: 55%;
+    max-height: 55%;
 }
 
 .gallery:nth-child(3) .grid-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 2px;
+    width: 100%;
+    min-height: 55%;
+    max-height: 55%;
 }
 .gallery:nth-child(3) .grid-container img {
-  width: 4em;
-  height: auto;
+
+      width: 100%;
+      min-height: 55%;
+      max-height: 55%;
 }
 
 .gallery:nth-child(4) .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2px;
+      width: 100%;
+      min-height: 55%;
+      max-height: 55%;
 }
 .gallery:nth-child(4) .grid-container img {
   width: 4em;
   height: auto;
+      width: 100%;
+      min-height: 55%;
+      max-height: 55%;
 }
 
 .gallery {
-  padding:80%;
+  padding:70%;
   display: flex;
   justify-content: center;
   color: teal;
   margin: 0 0 10px;
+
 }
 
 .grid-container {
@@ -113,6 +175,7 @@
   grid-gap: 10px;
   max-width: 40px;
   grid-auto-flow: row;
+
 }
 
 
@@ -124,6 +187,7 @@
   height: auto;
   margin-bottom: 1px;
   border-radius: 20px;
+
 }
 
 .price {
@@ -171,7 +235,7 @@ body {
 /* Drink item menu bar */
   .box2 {
     display: inline-block;
-    /* border: 2px solid black; */
+
     padding: 10px;
     width: 1500px;
     height: 72px;
@@ -185,7 +249,7 @@ body {
     text-align: center;
     background: linear-gradient(rgba(9, 2, 2, 0.685), rgba(118, 65, 16, 0.8));
   }
-  
+
   .box2 p {
     display: inline-block;
     font-size: 35px;
