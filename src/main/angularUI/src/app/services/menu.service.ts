@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MilkTypes } from '../models/milk-types';
@@ -19,5 +19,11 @@ export class MenuService {
 
   getDrinkTypes(): Observable<DrinkTypes[]> {
     return this.http.get<DrinkTypes[]>(`${this.baseUrl}/drinkTypes`) 
+  }
+
+  getDrinkById(id: string): Observable<DrinkTypes> { 
+    this.baseUrl = this.baseUrl + "/drink";
+    let queryPramas = new HttpParams().append("drinkId", id); 
+    return this.http.get<DrinkTypes>(`${this.baseUrl}`, {params: queryPramas}); 
   }
 }

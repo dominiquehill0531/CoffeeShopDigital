@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
 import { UserService } from '../services/user.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MilkTypes } from '../models/milk-types';
 import { MenuService } from '../services/menu.service';
 import { DrinkTypes } from '../models/drink-types';
@@ -17,7 +17,7 @@ export class CreateCoffeeComponent implements OnInit {
 
   milkTypes!: MilkTypes[];
   
-  
+  selectedDrink: undefined| DrinkTypes;
 
   // milks = ["Please choose an option","Heavy Cream", "Vanilla Sweet Cream", "Non Fat Milk", "2% Milk", "Whole Milk", "Half & Half", "Almond", "Coconut", "Oatmilk", "Soy"];
 
@@ -31,7 +31,7 @@ export class CreateCoffeeComponent implements OnInit {
   selectedSize = "";
 
   message: string = "";
-  constructor(private userService: UserService, private router: Router, private menuService: MenuService) { }
+  constructor(private userService: UserService, private router: Router, private menuService: MenuService, private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.menuService.getMilkTypes().subscribe((data: MilkTypes[]) => {
@@ -39,6 +39,11 @@ export class CreateCoffeeComponent implements OnInit {
       this.milkTypes = data;
     })
 
+    let drinkId = this.activeRoute.snapshot.paramMap.get('drinkId');
+    console.log("this is the selected drink id "+ drinkId);
+    drinkId && this.menuService.getDrinkById(drinkId).subscribe((data) => {
+      this.selectedDrink = data;
+    })
   }
 
   updateSize(size: string){

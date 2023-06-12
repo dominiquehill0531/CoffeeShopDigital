@@ -15,7 +15,7 @@ import { OrderCompleteComponent } from './order-complete/order-complete.componen
 const routes: Routes = [
   { path: 'admin-edit', component: AdminEditPageComponent },
   { path: 'user-login', component: UserLoginPageComponent },
-  { path: 'create-coffee', component: CreateCoffeeComponent },
+  { path: 'create-coffee/:drinkId', component: CreateCoffeeComponent },
   { path: 'user-homepage', component: UserHomepageComponent },
   { path: 'order-item-specifics', component: OrderItemSpecificsComponent },
   { path: 'home-page', component: HomePageComponent },
