@@ -16,6 +16,8 @@ export class CreateCoffeeComponent implements OnInit {
   user: User = new User();
 
   milkTypes!: MilkTypes[];
+  
+  
 
   // milks = ["Please choose an option","Heavy Cream", "Vanilla Sweet Cream", "Non Fat Milk", "2% Milk", "Whole Milk", "Half & Half", "Almond", "Coconut", "Oatmilk", "Soy"];
 
