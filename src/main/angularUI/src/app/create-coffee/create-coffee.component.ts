@@ -78,4 +78,8 @@ export class CreateCoffeeComponent implements OnInit {
     })
   }
 
+  goToOrder(){
+    this.router.navigate(['/home/cart-page']);
+  }
+
 }
