@@ -39,9 +39,9 @@ export class UserHomepageComponent implements OnInit {
     })
   }
 
-  // gotoOrderItem() {
-  //   this.router.navigate(['/create-coffee']);
-  // }
+  gotoOrderItem() {
+    this.router.navigate(['/create-coffee']);
+  }
   
   goToLoginPage() {
     this.router.navigate(['/user-login']);

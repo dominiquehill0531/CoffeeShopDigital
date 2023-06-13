@@ -19,7 +19,10 @@ import { CartPageComponent } from './cart-page/cart-page.component';
 const routes: Routes = [
   { path: 'admin-edit', component: AdminEditPageComponent },
   { path: 'user-login', component: UserLoginPageComponent },
-  { path: 'create-coffee/:drinkId', component: CreateCoffeeComponent },
+
+
+  
+  { path: 'create-coffee', component: CreateCoffeeComponent },
   { path: 'user-homepage', component: UserHomepageComponent },
   { path: 'order-item-specifics', component: OrderItemSpecificsComponent },
   { path: 'home-page', component: HomePageComponent },
