@@ -10,12 +10,11 @@
   <section class="gallery">
     <div class="grid-container">
       <div *ngFor="let drink of drinkTypes" class="grid-item">
-        <a routerLink="/create-coffee/{{drink.id}}"><img [src]="drink.imageUrl"></a>
-        <p>{{ drink.name }}<span class="price">${{ drink.price }}</span></p>
+        <a routerLink="/create-coffee/${drink.id}"><img [src]="drink.imageUrl"></a>
+        <p>{{ drink.name }}<span class="price">{{ drink.price }}</span></p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 <!--<section class="menu">-->
 <!--  <div class="container">-->
@@ -31,11 +30,10 @@
 <section class="list">
     <div class="box2">
       <p>Value Menu</p>
-        <div *ngFor="let drink of drinkTypes" class="grid-item" (click)="gotoOrderItem()" [hidden]="drink.price >= 2.50">
-          <img [src]="drink.imageUrl">
-          <p><span class="name">{{ drink.name }}</span></p>
-          <p><span class="price">{{ drink.price }}</span></p>
-        </div>
+      <div *ngFor="let drink of drinkTypes" class="grid-item"  [hidden]="drink.price >= 2.50"><!--(click)="gotoOrderItem()"-->
+        <a routerLink="/create-coffee/${drink.id}"><img [src]="drink.imageUrl"></a>
+        <p>{{ drink.name }}<span class="price">{{ drink.price }}</span></p>
+      </div>
     </div>
 </section>
 </body>

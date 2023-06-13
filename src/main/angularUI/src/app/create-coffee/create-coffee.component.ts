@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
 import { UserService } from '../_services/user.service';
-import { Router } from '@angular/router';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MilkTypes } from '../models/milk-types';
 import { MenuService } from '../_services/menu.service';
 import { DrinkTypes } from '../models/drink-types';
@@ -84,6 +83,10 @@ export class CreateCoffeeComponent implements OnInit {
   order(){
     console.log("button clicked");
     this.router.navigate(['/order-complete'])
+  }
+
+  goToOrder(){
+    //this.router.navigate(['']);
   }
 
 }

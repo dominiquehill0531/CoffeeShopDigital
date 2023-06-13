@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
+import { FormsModule, NgForm } from '@angular/forms';
 import { UserService } from '../_services/user.service';
 import { TokenStorageService } from '../_services/token-storage.service'
 import { Router } from '@angular/router';
