@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -18,14 +19,16 @@ import { MatTableModule } from '@angular/material/table';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-//import { UserHomepageComponent } from './user-homepage/user-homepage.component';
+import { RatingModule } from 'ng-starrating';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
+
+import { UserHomepageComponent } from './user-homepage/user-homepage.component';
 import { AdminEditPageComponent } from './admin-edit-page/admin-edit-page.component';
 import { UserLoginPageComponent } from './user-login-page/user-login-page.component';
 import { CreateCoffeeComponent } from './create-coffee/create-coffee.component';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { Routes, RouterModule } from '@angular/router';
-import { UserHomepageComponent } from './user-homepage/user-homepage.component';
 import { OrderItemSpecificsComponent } from './order-item-specifics/order-item-specifics.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
@@ -34,7 +37,6 @@ import { OrderCompleteComponent } from './order-complete/order-complete.componen
 import { HeaderComponent } from './page-standards/header/header.component';
 import { UserHeaderComponent } from './user-header/user-header.component';
 import { HomeComponent } from './home/home.component';
-import { RatingModule } from 'ng-starrating';
 import { SearchComponent } from './search/search.component';
 import { TagsComponent } from './tags/tags.component';
 import { DrinkpageComponent } from './drinkpage/drinkpage.component';
@@ -86,7 +88,7 @@ import { CartPageComponent } from './cart-page/cart-page.component';
     RatingModule,
 
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

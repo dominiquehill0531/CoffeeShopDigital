@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DrinkService } from '../services/drink.service';
+import { DrinkService } from '../_services/drink.service';
 import { Drink } from '../models/Drink';
 import { ActivatedRoute } from '@angular/router';
 
@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
       else
       this.drinks = this.drinkService.getAll();
     })
-    
+
   }
 
 }

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
-import { UserService } from '../services/user.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from '../_services/user.service';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MilkTypes } from '../models/milk-types';
-import { MenuService } from '../services/menu.service';
+import { MenuService } from '../_services/menu.service';
 import { DrinkTypes } from '../models/drink-types';
 import { Flavors } from '../models/flavors';
 import { Toppings } from '../models/toppings';
@@ -22,7 +22,7 @@ export class CreateCoffeeComponent implements OnInit {
   flavors!: Flavors[];
 
   toppings!: Toppings[];
-  
+
   selectedDrink: undefined| DrinkTypes;
 
   // milks = ["Please choose an option","Heavy Cream", "Vanilla Sweet Cream", "Non Fat Milk", "2% Milk", "Whole Milk", "Half & Half", "Almond", "Coconut", "Oatmilk", "Soy"];
@@ -85,22 +85,8 @@ export class CreateCoffeeComponent implements OnInit {
     this.router.navigate(['/order-complete'])
   }
 
-
-  logoutUser(){
-    console.log("inside logout user");
-    console.log(this.user);
-    this.user.email="newUser@email.com";
-    this.user.password="test";
-    // this.user.role=""
-    // this.user.birthday="";
-    this.userService.logoutUser().subscribe(data => {
-      alert("You've been signed out!")
-      this.router.navigate(['/user-login']);
-    })
-  }
-
   goToOrder(){
-    this.router.navigate(['/home/cart-page']);
+    //this.router.navigate(['']);
   }
 
 }

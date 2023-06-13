@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Cart } from '../models/Cart';
-import { CartService } from '../services/cart.service';
+import { CartService } from '../_services/cart.service';
 import { CartItem } from '../models/CartItem';
-import { DrinkService } from '../services/drink.service';
+import { DrinkService } from '../_services/drink.service';
 
 @Component({
   selector: 'app-cart-page',
@@ -11,7 +11,7 @@ import { DrinkService } from '../services/drink.service';
 })
 export class CartPageComponent implements OnInit {
   cart!:Cart;
-  constructor(private cartService: CartService, private drinkkSerive:DrinkService) { 
+  constructor(private cartService: CartService, private drinkkSerive:DrinkService) {
     let drinks = drinkkSerive.getAll();
     cartService.addToCart(drinks[1])
     cartService.addToCart(drinks[2])

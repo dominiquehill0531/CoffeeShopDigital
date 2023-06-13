@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { AdminEditPageComponent } from './admin-edit-page/admin-edit-page.component';
 import { UserLoginPageComponent } from './user-login-page/user-login-page.component';
 import { CreateCoffeeComponent } from './create-coffee/create-coffee.component';
 import { UserHomepageComponent } from './user-homepage/user-homepage.component';
 import { OrderItemSpecificsComponent } from './order-item-specifics/order-item-specifics.component';
-
 import { HomePageComponent } from './home-page/home-page.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
@@ -28,19 +28,19 @@ const routes: Routes = [
   { path: 'order-complete', component: OrderCompleteComponent},
   { path: 'search/:searchTerm', component: HomeComponent},
   { path: 'tag/:tag', component:HomeComponent},
-  
-  
+
+
 
   { path: 'home', component: UserHeaderComponent, children: [
     {
       path: '', component: HomeComponent
     },
-    { 
+    {
       path: 'drink/:id', component:DrinkpageComponent
    }, { path: 'cart-page', component: CartPageComponent},
-   
+
   ]},
-  
+
 
 
 

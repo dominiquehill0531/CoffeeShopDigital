@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Drink } from '../models/Drink';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { DrinkService } from '../services/drink.service';
-import { CartService } from '../services/cart.service';
+import { DrinkService } from '../_services/drink.service';
+import { CartService } from '../_services/cart.service';
 
 @Component({
   selector: 'app-drinkpage',
@@ -12,8 +12,8 @@ import { CartService } from '../services/cart.service';
 export class DrinkpageComponent implements OnInit {
 
   drink!: Drink;
-  constructor(private activatedRoute: ActivatedRoute, 
-              private drinkService: DrinkService, 
+  constructor(private activatedRoute: ActivatedRoute,
+              private drinkService: DrinkService,
               private cartSerive: CartService,
               private router: Router) {
     activatedRoute.params.subscribe((params) => {
@@ -31,6 +31,6 @@ export class DrinkpageComponent implements OnInit {
     this.router.navigateByUrl('/create-coffee');
   }
 
-  
+
 
 }

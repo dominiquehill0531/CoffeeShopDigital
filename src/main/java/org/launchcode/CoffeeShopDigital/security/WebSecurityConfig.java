@@ -56,16 +56,9 @@ public class WebSecurityConfig {
             .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
             .authorizeRequests()
-                .antMatchers("/api/auth/login").anonymous()
-                .antMatchers("/api/type/milkType").anonymous()
-                .antMatchers("/api/auth/logout").anonymous()
-                .antMatchers("/api/auth/register/user").anonymous()
-                .antMatchers("/api/auth/user-details").anonymous()
-                .antMatchers("/api/type/drinkTypes").anonymous()
-                .antMatchers("/api/type/drink").anonymous()
-                .antMatchers("/api/type/flavors").anonymous()
-                .antMatchers("/api/type/toppings").anonymous()
-                .antMatchers("/api/auth/register/admin").hasRole("ADMIN")
+                .antMatchers("/api/type/**").permitAll()
+                .antMatchers("/api/auth/login/**").anonymous()
+                .antMatchers("/api/auth/register/**").permitAll()
                 .anyRequest().authenticated();
 
         http.authenticationProvider(authenticationProvider());
