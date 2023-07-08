@@ -11,12 +11,10 @@ export class Drink extends Purchasable {
     isDrinkIced: boolean = false;
     isDecaf: boolean = false;
     hasSplashMilk: boolean = false;
+    milkChoice?: MilkTypes;
     flavors?: SweetTypes[];
     options?: [];
     tags?: string[];
-    favorite: boolean = false;
-    stars: number = 0;
-    imageUrl?: string;
     category?: string;
 
 

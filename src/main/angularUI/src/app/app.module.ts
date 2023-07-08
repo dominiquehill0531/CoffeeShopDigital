@@ -38,8 +38,6 @@ import { HeaderComponent } from './page-standards/header/header.component';
 import { UserHeaderComponent } from './user-header/user-header.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
-import { TagsComponent } from './tags/tags.component';
-import { DrinkpageComponent } from './drinkpage/drinkpage.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 
 @NgModule({
@@ -58,8 +56,6 @@ import { CartPageComponent } from './cart-page/cart-page.component';
     UserHeaderComponent,
     HomeComponent,
     SearchComponent,
-    TagsComponent,
-    DrinkpageComponent,
     CartPageComponent,
 
 

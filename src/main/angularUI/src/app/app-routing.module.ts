@@ -12,7 +12,6 @@ import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
 import { OrderCompleteComponent } from './order-complete/order-complete.component';
 import { HomeComponent } from './home/home.component';
 import { UserHeaderComponent } from './user-header/user-header.component';
-import { DrinkpageComponent } from './drinkpage/drinkpage.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 //import { UserHomepageComponent } from './user-homepage/user-homepage.component';
 
@@ -35,9 +34,12 @@ const routes: Routes = [
     {
       path: '', component: HomeComponent
     },
+    // {
+    //   path: 'drink/:name', component:DrinkpageComponent
+    // },
     {
-      path: 'drink/:id', component:DrinkpageComponent
-   }, { path: 'cart-page', component: CartPageComponent},
+      path: 'cart-page', component: CartPageComponent
+    },
 
   ]},
 

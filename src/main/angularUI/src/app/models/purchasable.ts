@@ -5,6 +5,9 @@ export abstract class Purchasable {
     description!: string;
     price!: number;
     quantity: number = 1;
+    favorite: boolean = false;
+    stars: number = 0;
+    imageUrl?: string;
 
 
     constructor(aName: any, aDescription: string, aPrice: number) {

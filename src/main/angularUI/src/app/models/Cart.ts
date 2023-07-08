@@ -1,10 +1,8 @@
-import { CartItem } from "./CartItem";
-
 export class Cart {
-    items: CartItem[]=[];
+    items: any[] = [];
 
-    get totalPrice(): number{
-        let totalPrice =0;
+    get totalPrice(): number {
+        let totalPrice = 0.00;
         this.items.forEach(item => {
             totalPrice += item.price;
         })

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cart } from '../models/Cart';
 import { CartService } from '../_services/cart.service';
-import { CartItem } from '../models/CartItem';
 import { DrinkService } from '../_services/drink.service';
 
 @Component({
@@ -10,23 +9,21 @@ import { DrinkService } from '../_services/drink.service';
   styleUrls: ['./cart-page.component.css']
 })
 export class CartPageComponent implements OnInit {
-  cart!:Cart;
-  constructor(private cartService: CartService, private drinkkSerive:DrinkService) {
-    let drinks = drinkkSerive.getAll();
-    cartService.addToCart(drinks[1])
-    cartService.addToCart(drinks[2])
-    cartService.addToCart(drinks[3])
+  cart!: Cart;
+
+  constructor(private cartService: CartService, private drinkService: DrinkService) {
     this.setCart();
   }
+
   ngOnInit(): void {
   }
 
-  removeFromCart(cartItem:CartItem){
-    this.cartService.removeFromCart(cartItem.drink.id);
+  removeFromCart(cartItem: any){
+    this.cartService.removeFromCart(cartItem);
     this.setCart();
   }
 
-  changeQuantity(cartItem:CartItem, quantityInString:string){
+  changeQuantity(cartItem: any, quantityInString:string){
     const quantity= parseInt(quantityInString);
     this.cartService.changeQuantity(cartItem.drink.id, quantity);
     this.setCart();
