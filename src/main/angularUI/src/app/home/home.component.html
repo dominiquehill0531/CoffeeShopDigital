@@ -1,8 +1,10 @@
+<body id="container">
+
 <app-search></app-search>
 <ul>
     <li *ngFor="let drink of drinks">
-        <a routerLink="/home/drink/{{drink.id}}">
-            <a class="images"><img src="{{drink.imageUrl}}" alt=""></a>
+        <a routerLink="/create-coffee/{{ drink.name }}">
+            <a class="images"><img src="{{ drink.imageUrl }}" alt=""></a>
             <div class="content">
                 <div class="name">
                     {{drink.name}}
@@ -24,3 +26,7 @@
         
     </li>
 </ul>
+
+</body>
+
+

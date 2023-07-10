@@ -11,15 +11,15 @@ import { DrinkTypes } from '../models/drink-types';
 })
 export class HomeComponent implements OnInit {
 
-  drinks: DrinkTypes[] = [];
+  drinkTypes: DrinkTypes[] = [];
   constructor(private drinkService:DrinkService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       if(params['searchTerm'])
-      this.drinks = this.drinkService.getAll().filter(food => food.name.toLowerCase().includes(params['searchTerm'].toLowerCase()))
+      this.drinkTypes = this.drinkService.getAll().filter(food => food.name.toLowerCase().includes(params['searchTerm'].toLowerCase()))
       else
-      this.drinks = this.drinkService.getAll();
+      this.drinkTypes = this.drinkService.getAll();
     })
   }
 

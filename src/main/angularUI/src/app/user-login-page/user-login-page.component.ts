@@ -41,7 +41,7 @@ export class UserLoginPageComponent implements OnInit {
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
         sessionStorage.setItem("name", nextName);
-        this.router.navigate(['/user-homepage']);
+        this.router.navigate(['/home']);
       },
       error => {
         alert("Please enter correct username and password");
