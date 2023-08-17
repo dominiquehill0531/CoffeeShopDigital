@@ -1,24 +1,22 @@
+<body id="container">
+
 <app-search></app-search>
-<app-tags></app-tags>
 <ul>
-    <li *ngFor="let drink of drinks">
-        <a routerLink="/home/drink/{{drink.id}}">
-            <a class="images"><img src="{{drink.imageUrl}}" alt=""></a>
+    <li *ngFor="let drink of drinkTypes">
+        <a routerLink="/create-coffee/{{ drink.name }}">
+            <a class="images"><img src="{{ drink.imageUrl }}" alt=""></a>
             <div class="content">
                 <div class="name">
-                    {{drink.name}}
+                    {{ drink.name }}
                 </div>
-                <span class="favorite {{drink.favorite?'':'not'}}">
-                    ❤
-                </span>
-                <star-rating 
+                <!-- <star-rating 
                     [value]="drink.stars"
                     [totalstars]="5"
                     checkedcolor="red" 
                     uncheckedcolor="black" 
                     size="20px" 
                     [readonly]="true" >
-                </star-rating>
+                </star-rating> -->
                 <div class="price">
                     <span>{{drink.price | currency}}</span>
 
@@ -28,3 +26,7 @@
         
     </li>
 </ul>
+
+</body>
+
+

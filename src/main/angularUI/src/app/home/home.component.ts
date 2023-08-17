@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DrinkService } from '../_services/drink.service';
 import { Drink } from '../models/Drink';
 import { ActivatedRoute } from '@angular/router';
+import { DrinkTypes } from '../models/drink-types';
 
 @Component({
   selector: 'app-home',
@@ -10,19 +11,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  drinks:Drink[]=[];
+  drinkTypes: DrinkTypes[] = [];
   constructor(private drinkService:DrinkService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       if(params['searchTerm'])
-      this.drinks = this.drinkService.getAll().filter(food => food.name.toLowerCase().includes(params['searchTerm'].toLowerCase()))
-      else if(params['tag'])
-      this.drinks = this.drinkService.getAllDrinkByTag(params['tag'])
+      this.drinkTypes = this.drinkService.getAll().filter(food => food.name.toLowerCase().includes(params['searchTerm'].toLowerCase()))
       else
-      this.drinks = this.drinkService.getAll();
+      this.drinkTypes = this.drinkService.getAll();
     })
-
   }
 
 }

@@ -1,4 +1,51 @@
-ul{
+body {
+    background-image:url('/assets/images/christina-rumpf-LMzwJDu6hTE-unsplash.jpg');
+    background-size: auto;
+    width: 100%;
+    height: auto;
+    background-position: center;
+    background-repeat: repeat;
+}
+  
+button {
+    height: 70px;
+    width: 50%;
+    background: teal;
+    color: #fff;
+    border: 1px solid #eee;
+    border-radius: 80px;
+    box-shadow: 5px 5px 5px #eee;
+    text-shadow: none;
+}  
+  
+button:hover {
+    background: #0887e8;
+    color: #fff;
+    border: 1px solid #eee;
+    border-radius: 80px;
+    box-shadow: 5px 5px 5px #eee;
+    text-shadow: none;
+}
+
+li a {
+    height: 20rem;
+    width: 20rem;
+    background: #E8AE6B;
+    border: 1px solid whitesmoke;
+    border-radius: 0rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: teal;
+}
+
+li a:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,36 +54,18 @@ ul{
     padding:0;
 }
 
-li a{
-    height: 20rem;
-    width: 20rem;
-    border: 1px solid whitesmoke;
-    border-radius: 0rem;
-    margin: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    color: #e72929;
-}
-
-li a:hover{
-    opacity: 0.9;
-    cursor: pointer;
-}
-
-.content{
+.content {
     padding: .5rem 1rem;
     position: relative;
 }
 
-.favorite{
+.favorite {
     position: absolute;
     top: .5rem;
     right: 1rem;
     font-size: 1.2rem;
 }
 
-.favorite.not{
+.favorite.not {
     color:grey;
 }
-

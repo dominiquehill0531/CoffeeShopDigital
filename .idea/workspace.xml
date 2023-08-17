@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c379f3ac-c97d-4afb-b877-53fd1319b55d" name="Changes" comment="Worked out backend kinks in persisting new users and roles; Made header fully responsive to user info/state; Set authorization scheme for registration and login after some refactoring; Added client side validation on forms">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/model/coffeetea/bean/BeanOrigin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/launchcode/CoffeeShopDigital/model/coffeetea/bean/BeanOrigin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +26,23 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="CoffeeShopDigital" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="CoffeeShopDigital" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="CoffeeShopDigital" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -88,11 +105,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.google.cloudcode.ide_session_index": "20230524_0001",
-    "last_opened_file_path": "C:/Users/djh007ktr/LC101/CoffeeShopDigital/src/main/angularclient",
+    "last_opened_file_path": "C:/Users/djh007ktr/LC101/CoffeeShopDigital",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
@@ -377,6 +394,11 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">

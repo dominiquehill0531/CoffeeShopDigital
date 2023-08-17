@@ -18,7 +18,7 @@ public class BeanOrigin {
         pouroverPriceMap.put(EOrigin.ETHIOPIA, 6.00);
         pouroverPriceMap.put(EOrigin.COLOMBIA, 4.50);
         pouroverPriceMap.put(EOrigin.RWANDA, 5.25);
-        pouroverPriceMap.put(EOrigin.HONDURAS,5.50);
+        pouroverPriceMap.put(EOrigin.HONDURAS, 5.50);
 
         this.pouroverPrice = pouroverPriceMap.get(this.origin);
     }
