@@ -1,10 +1,10 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { MilkTypes } from '../models/milk-types';
-import { DrinkTypes } from '../models/drink-types';
-import { Flavors } from '../models/flavors';
-import { Toppings } from '../models/toppings';
+import { MilkTypes } from '../_models/milk-types';
+import { DrinkTypes } from '../_models/drink-types';
+import { Flavors } from '../_models/flavors';
+import { Toppings } from '../_models/toppings';
 
 @Injectable({
   providedIn: 'root'

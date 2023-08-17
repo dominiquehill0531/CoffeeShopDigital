@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DrinkService } from '../_services/drink.service';
-import { Drink } from '../models/Drink';
+import { Drink } from '../_models/Drink';
 import { ActivatedRoute } from '@angular/router';
-import { DrinkTypes } from '../models/drink-types';
+import { DrinkTypes } from '../_models/drink-types';
 
 @Component({
   selector: 'app-home',

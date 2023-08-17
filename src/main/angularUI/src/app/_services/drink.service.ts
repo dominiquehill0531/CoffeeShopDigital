@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Drink } from '../models/Drink';
-import { Tag } from '../models/Tag';
-import { DrinkTypes } from '../models/drink-types';
+import { Drink } from '../_models/Drink';
+import { Tag } from '../_models/Tag';
+import { DrinkTypes } from '../_models/drink-types';
 
 @Injectable({
   providedIn: 'root'

@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../models/user';
+import { User } from '../_models/user';
 import { UserService } from '../_services/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { MilkTypes } from '../models/milk-types';
+import { MilkTypes } from '../_models/milk-types';
 import { MenuService } from '../_services/menu.service';
-import { DrinkTypes } from '../models/drink-types';
-import { Flavors } from '../models/flavors';
-import { Toppings } from '../models/toppings';
-import { SweetTypes } from '../models/sweet-types';
+import { DrinkTypes } from '../_models/drink-types';
+import { Flavors } from '../_models/flavors';
+import { Toppings } from '../_models/toppings';
+import { SweetTypes } from '../_models/sweet-types';
 
 @Component({
   selector: 'app-create-coffee',
