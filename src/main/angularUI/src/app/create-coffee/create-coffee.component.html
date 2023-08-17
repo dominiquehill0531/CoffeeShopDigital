@@ -3,8 +3,8 @@
 
         <div class="coffee-cup">
             <!-- add code to display the selected drink -->
-            <img src="{{selectedDrink?.imageUrl}}">
-            <p>{{selectedDrink?.name}}</p>
+            <img src="{{ selectedDrink?.imageUrl }}">
+            <p>{{ selectedDrink?.name }}</p>
         </div>
         <div class="row">
             <div class="column">
@@ -16,12 +16,17 @@
                             <option *ngFor="let milk of milkTypes" [value]="milk.name" >{{milk.name}}</option>
                         </select>
                     </div>
-                    <div class="align">
-                        <label for="flavor">Flavors</label>
-                        <select name="flavor" (change)="selectedFlavorsHandler($event)" id="flavor">
-                            <option *ngFor="let flavor of flavors" >{{flavor.name}}</option>
-                        </select>
-                    </div>
+
+                    <label>Flavors<div>
+                        <div *ngFor="let flavor of flavors">
+                            <label>{{ flavor.name }}
+                                <input  type="checkbox" name="flavor"
+                                        value="{{ flavor.name }}" />
+                            </label>
+                        </div>
+                        
+                    </div></label>
+                    
                     <div class="align">
                         <label for="topping">Toppings</label>
                         <select name="topping" (change)="selectedToppingsHandler($event)" id="topping">

@@ -2,12 +2,12 @@
 
 <app-search></app-search>
 <ul>
-    <li *ngFor="let drink of drinks">
+    <li *ngFor="let drink of drinkTypes">
         <a routerLink="/create-coffee/{{ drink.name }}">
             <a class="images"><img src="{{ drink.imageUrl }}" alt=""></a>
             <div class="content">
                 <div class="name">
-                    {{drink.name}}
+                    {{ drink.name }}
                 </div>
                 <!-- <star-rating 
                     [value]="drink.stars"

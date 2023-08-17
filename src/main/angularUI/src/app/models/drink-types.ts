@@ -7,9 +7,9 @@ export class DrinkTypes {
     imageUrl?: string;
     static drinkTypesList: DrinkTypes[] = [
         // TODO: Add basic descriptions
-        {id: 1, name: 'Latte', price: 4.50, imageUrl: 'src\main\angularUI\src\assets\images\Latte.jpg'},
+        {id: 1, name: 'Latte', price: 4.50, imageUrl: "/assets/images/Latte.jpg"},
         {id: 2, name: 'Cafe Au Lait', price: 3.75, imageUrl: ''},// TODO: AuLait img
-        {id: 3, name: 'Cappuccino', price: 4.00, imageUrl: 'src\main\angularUI\src\assets\images\Cappuccino.jpg'},
+        {id: 3, name: 'Cappuccino', price: 4.00, imageUrl: '/assets/images/Cappuccino.jpg'},
         {id: 4, name: 'Cortado', price: 3.50, imageUrl: ''},// TODO: Cortado img
         {id: 5, name: 'Drip', price: 3.25, imageUrl: ''},// TODO: Drip img
         {id: 6, name: 'Espresso', price: 2.75, imageUrl: ''},// TODO: Esp img

@@ -7,6 +7,7 @@ import { MenuService } from '../_services/menu.service';
 import { DrinkTypes } from '../models/drink-types';
 import { Flavors } from '../models/flavors';
 import { Toppings } from '../models/toppings';
+import { SweetTypes } from '../models/sweet-types';
 
 @Component({
   selector: 'app-create-coffee',
@@ -17,13 +18,13 @@ export class CreateCoffeeComponent implements OnInit {
 
   user: User = new User();
 
-  milkTypes!: MilkTypes[];
+  milkTypes: MilkTypes[] = MilkTypes.milkTypesList;
 
-  flavors!: Flavors[];
+  flavors: SweetTypes[] = SweetTypes.sweetTypesList;
 
   toppings!: Toppings[];
 
-  selectedDrink: undefined| DrinkTypes;
+  selectedDrink: undefined | DrinkTypes;
 
   // milks = ["Please choose an option","Heavy Cream", "Vanilla Sweet Cream", "Non Fat Milk", "2% Milk", "Whole Milk", "Half & Half", "Almond", "Coconut", "Oatmilk", "Soy"];
 
@@ -40,18 +41,6 @@ export class CreateCoffeeComponent implements OnInit {
   constructor(private userService: UserService, private router: Router, private menuService: MenuService, private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.menuService.getMilkTypes().subscribe((data: MilkTypes[]) => {
-      console.log(data);
-      this.milkTypes = data;
-    })
-
-    this.menuService.getFlavors().subscribe((data: Flavors[]) => {
-      this.flavors = data;
-    })
-
-    this.menuService.getToppings().subscribe((data: Toppings[]) => {
-      this.toppings = data;
-    })
 
     let drinkId = this.activeRoute.snapshot.paramMap.get('drinkId');
     console.log("this is the selected drink id "+ drinkId);
