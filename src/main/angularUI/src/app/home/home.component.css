@@ -69,6 +69,7 @@ ul {
     padding: .5rem 1rem;
     position: relative;
     min-height: 15%;
+    margin-bottom: 5px;
 }
 
 .favorite {
