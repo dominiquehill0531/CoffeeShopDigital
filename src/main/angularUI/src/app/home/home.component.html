@@ -3,14 +3,13 @@
 <app-search></app-search>
 <ul>
     <li *ngFor="let drink of drinkTypes">
-        <a routerLink="/create-coffee/{{ drink.name }}" class="content">
+        <a routerLink="/create-coffee/{{ drink.name }}" class="content" (click)="chooseProtoDrink(drink)">
             <div><img src="{{ drink.imageUrl }}" alt=""></div>
             <div class="content">
                 <span class="name">{{ drink.name }}</span>
                 <span>{{drink.price | currency}}</span>
             </div>
         </a>
-        
     </li>
 </ul>
 

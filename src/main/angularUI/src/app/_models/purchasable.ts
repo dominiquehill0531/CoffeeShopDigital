@@ -1,23 +1,21 @@
-import { DrinkTypes } from "./drink-types";
-
 export abstract class Purchasable {
-    name: any;
-    description!: string;
+    name!: any;
     price!: number;
-    quantity: number = 1;
-    favorite: boolean = false;
-    stars: number = 0;
+    quantity!: number;
+    description?: string = "";
+    favorite?: boolean = false;
+    stars?: number = 0;
     imageUrl?: string;
 
 
-    constructor(aName: any, aDescription: string, aPrice: number) {
+    constructor(aName: any, aPrice: number, anImage?: string) {
         this.name = aName;
-        this.description = aDescription;
         this.price = aPrice;
+        this.imageUrl = anImage;
     }
 
 
-    printOrderString() {
+    printOrderString(): string {
         return `${this.quantity}\t${this.name}\t=\t$ ${this.quantity * this.price}`;
     }
 

@@ -20,7 +20,7 @@ export class Drink extends Purchasable {
 
     constructor(drinkName: DrinkTypes, drinkDescription: string, drinkPrice: number,
                 drinkSize: SizeTypes) {
-        super(drinkName, drinkDescription, drinkPrice);
+        super(drinkName, drinkPrice);
         this.id = Drink.nextId;
         this.size = drinkSize;
         Drink.nextId++

@@ -12,6 +12,7 @@ import { DrinkTypes } from '../_models/drink-types';
 export class HomeComponent implements OnInit {
 
   drinkTypes: DrinkTypes[] = [];
+  
   constructor(private drinkService:DrinkService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -21,6 +22,10 @@ export class HomeComponent implements OnInit {
       else
       this.drinkTypes = this.drinkService.getAll();
     })
+  }
+
+  chooseProtoDrink(drinkType: DrinkTypes): void {
+    sessionStorage.setItem("protoDrink", drinkType.name);
   }
 
 }

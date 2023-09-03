@@ -8,6 +8,9 @@ import { DrinkTypes } from '../_models/drink-types';
 import { Flavors } from '../_models/flavors';
 import { Toppings } from '../_models/toppings';
 import { SweetTypes } from '../_models/sweet-types';
+import { DrinkService } from '../_services/drink.service';
+import { NonNullAssert } from '@angular/compiler';
+import { Drink } from '../_models/Drink';
 
 @Component({
   selector: 'app-create-coffee',
@@ -16,37 +19,24 @@ import { SweetTypes } from '../_models/sweet-types';
 })
 export class CreateCoffeeComponent implements OnInit {
 
-  user: User = new User();
-
+  customDrink!: Drink;
   milkTypes: MilkTypes[] = MilkTypes.milkTypesList;
-
   flavors: SweetTypes[] = SweetTypes.sweetTypesList;
-
   toppings!: Toppings[];
-
-  selectedDrink: undefined | DrinkTypes;
-
-  // milks = ["Please choose an option","Heavy Cream", "Vanilla Sweet Cream", "Non Fat Milk", "2% Milk", "Whole Milk", "Half & Half", "Almond", "Coconut", "Oatmilk", "Soy"];
-
-  //flavors = ["Please choose an option","Brown Sugar Syrup", "Caramel Syrup", "Hazelnut Syrup", "Peppermint Syrup", "Vanilla Syrup", "Sugar Free Vanilla Syrup"];
-
-  //toppings = ["Please choose an option","Caramel Crunch", "Cookie Crumble", "Chocolate Mint Cookie Sprinkle"];
-
-  selectedMilk = [];
-  selectedFlavors = [];
+  selectedType!: DrinkTypes;
+  selectedMilk!: MilkTypes;
+  selectedFlavors?: SweetTypes[];
   selectedToppings = [];
   selectedSize = "";
 
   message: string = "";
-  constructor(private userService: UserService, private router: Router, private menuService: MenuService, private activeRoute: ActivatedRoute) { }
+  constructor(private drinkService: DrinkService, private userService: UserService, private router: Router, private menuService: MenuService, private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-
-    let drinkId = this.activeRoute.snapshot.paramMap.get('drinkId');
-    console.log("this is the selected drink id "+ drinkId);
-    drinkId && this.menuService.getDrinkById(drinkId).subscribe((data) => {
-      this.selectedDrink = data;
-    })
+    
+    this.selectedType = this.drinkService.getDrinkByName(sessionStorage.getItem("protoDrink")!);
+    this.customDrink.name = this.selectedType.name;
+    console.log("this is the selected drink: "+ this.selectedType.name);
   }
 
   updateSize(size: string){
@@ -74,7 +64,7 @@ export class CreateCoffeeComponent implements OnInit {
     this.router.navigate(['/order-complete'])
   }
 
-  goToOrder(){
+  addToCart(){
     //this.router.navigate(['']);
   }
 

@@ -1,10 +1,9 @@
 <body>
 <!--    <div class="background">-->
 
-        <div class="coffee-cup">
-            <!-- add code to display the selected drink -->
-            <img src="{{ selectedDrink?.imageUrl }}">
-            <p>{{ selectedDrink?.name }}</p>
+        <div class="customization">
+            <img src="{{ selectedType.imageUrl }}" title="drinkType"/>
+            <p>Customize your {{ selectedType.name }}!</p>
         </div>
         
         <div class="row">
@@ -12,21 +11,18 @@
                 <div class="customization">
                     <p>Add Customizations:</p>
                     <div class="align">
-                        <label for="milk">Milk</label>
-                        <select name="milk" (change)="selectedMilkHandler($event)" id="milk">
+                        <label for="milk">Choose Milk
+                        <select class="form-select" name="milk" (change)="selectedMilkHandler($event)" id="milk">
                             <option *ngFor="let milk of milkTypes" [value]="milk.name" >{{milk.name}}</option>
-                        </select>
+                        </select></label>
                     </div>
 
-                    <label>Flavors<div>
+                    <label>Flavors
                         <div *ngFor="let flavor of flavors">
                             <label>{{ flavor.name }}
-                                <input  type="checkbox" name="flavor"
-                                        value="{{ flavor.name }}" />
+                                <input  type="checkbox" name="flavor" value="{{ flavor.name }}"/>
                             </label>
-                        </div>
-                        
-                    </div></label>
+                        </div></label>
                     
                     <div class="align">
                         <label for="topping">Toppings</label>
@@ -79,6 +75,6 @@
             </div>
         </div>
 <!--    </div>-->
-        <button (click)="goToOrder()">Order Now</button>
+        <button (click)="addToCart()">Add to Cart</button>
 
 </body>

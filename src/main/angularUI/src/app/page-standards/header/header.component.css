@@ -44,7 +44,8 @@ img {
 }
 
 .user-button {
-  width: 150%;
+  width: 100%;
+  height: 120%;
 }
 
 #cart-icon {
@@ -71,7 +72,7 @@ img {
 #user-buttons {
   display: grid;
   row-gap: 15%;
-  grid-template-rows: max-content;
+  grid-auto-rows: max-content;
   grid-template-areas:
     "logUser"
     "toRegister";
