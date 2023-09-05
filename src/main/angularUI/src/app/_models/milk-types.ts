@@ -1,7 +1,7 @@
 export class MilkTypes {
     static nextId: number = 8;
     id: number;
-    name!: string;
+    name: string;
     addPrice!: number;
     imageUrl?: string;
     static milkTypesList: MilkTypes[] = [
@@ -22,5 +22,8 @@ export class MilkTypes {
         this.addPrice = addToPrice;
         this.imageUrl = image;
         MilkTypes.nextId++;
+
+
     }
+
 }    

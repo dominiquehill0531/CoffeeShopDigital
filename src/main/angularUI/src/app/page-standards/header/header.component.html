@@ -11,7 +11,7 @@
     <img id="logo" src="../assets/images/DJC logo.png" alt="logo">
   </a>
 
-  <div id="user-buttons">
+  <div class="btn-group-vertical" id="user-buttons">
     <div *ngIf="isUserLoggedIn(); else loginButton">
       <button class="user-button" id="logout" (click)="logout()">Logout</button>
     </div>

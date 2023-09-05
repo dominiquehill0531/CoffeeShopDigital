@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { User } from '../models/user';
-import { UserService } from '../_services/user.service';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { MilkTypes } from '../models/milk-types';
+import { FormsModule, NgForm } from '@angular/forms';
+
+import { UserService } from '../_services/user.service';
+import { MilkTypes } from '../_models/milk-types';
 import { MenuService } from '../_services/menu.service';
-import { DrinkTypes } from '../models/drink-types';
-import { Flavors } from '../models/flavors';
-import { Toppings } from '../models/toppings';
-import { SweetTypes } from '../models/sweet-types';
+import { DrinkTypes } from '../_models/drink-types';
+import { SweetTypes } from '../_models/sweet-types';
+import { DrinkService } from '../_services/drink.service';
+import { Drink } from '../_models/Drink';
+import { SizeTypes } from '../_models/size-types';
 
 @Component({
   selector: 'app-create-coffee',
@@ -16,66 +18,61 @@ import { SweetTypes } from '../models/sweet-types';
 })
 export class CreateCoffeeComponent implements OnInit {
 
-  user: User = new User();
+  @Input()
+  customDrink!: Drink;
+  
+  private milkTypes: MilkTypes[] = MilkTypes.milkTypesList;
+  private flavors: SweetTypes[] = SweetTypes.sweetTypesList;
+  private sizes: SizeTypes[] = SizeTypes.sizeList;
+  
+  @Input()
+  selectedFlavors: SweetTypes[] = [];
 
-  milkTypes: MilkTypes[] = MilkTypes.milkTypesList;
-
-  flavors: SweetTypes[] = SweetTypes.sweetTypesList;
-
-  toppings!: Toppings[];
-
-  selectedDrink: undefined | DrinkTypes;
-
-  // milks = ["Please choose an option","Heavy Cream", "Vanilla Sweet Cream", "Non Fat Milk", "2% Milk", "Whole Milk", "Half & Half", "Almond", "Coconut", "Oatmilk", "Soy"];
-
-  //flavors = ["Please choose an option","Brown Sugar Syrup", "Caramel Syrup", "Hazelnut Syrup", "Peppermint Syrup", "Vanilla Syrup", "Sugar Free Vanilla Syrup"];
-
-  //toppings = ["Please choose an option","Caramel Crunch", "Cookie Crumble", "Chocolate Mint Cookie Sprinkle"];
-
-  selectedMilk = [];
-  selectedFlavors = [];
-  selectedToppings = [];
-  selectedSize = "";
-
-  message: string = "";
-  constructor(private userService: UserService, private router: Router, private menuService: MenuService, private activeRoute: ActivatedRoute) { }
+  constructor(private drinkService: DrinkService, private userService: UserService, private router: Router, private menuService: MenuService, private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    
+    let selectedType = this.drinkService.getDrinkByName(sessionStorage.getItem("protoDrink")!);
+    this.customDrink = new Drink(selectedType.name, selectedType.price, selectedType.imageUrl);
+    console.log("this is the selected drink: "+ selectedType.name);
+  }
 
-    let drinkId = this.activeRoute.snapshot.paramMap.get('drinkId');
-    console.log("this is the selected drink id "+ drinkId);
-    drinkId && this.menuService.getDrinkById(drinkId).subscribe((data) => {
-      this.selectedDrink = data;
+  selectedFlavorsHandler() {
+    this.flavors.forEach(option => {
+      if (option.isChosen) {
+        this.selectedFlavors!.push(option);
+        this.customDrink.options.push(option.name, option.addPrice)
+      }
     })
+    this.customDrink.flavors = this.selectedFlavors;
   }
 
-  updateSize(size: string){
-    this.selectedSize = size;
-    console.log(this.selectedSize);
+  miscCustomizationsHandler() {
+    let icedChecked: any = document.getElementById('isIced')!.valueOf();
+    let decafChecked: any = document.getElementById('isDecaf')!.valueOf();
+    let splashChecked: any = document.getElementById('milkSplash')!.valueOf();
+    if (icedChecked == true) {
+      this.customDrink.isDrinkIced = icedChecked;
+      this.customDrink.options?.push("\nIced");
+    }
+    if (decafChecked == true) {
+      this.customDrink.isDecaf = decafChecked;
+      this.customDrink.options?.push("\nDecaf");
+    }
+    if (splashChecked == true) {
+      this.customDrink.hasSplashMilk = splashChecked;
+      this.customDrink.options?.push(`\nSplash of ${this.customDrink.milkChoice?.name} Milk`);
+    }
   }
 
-  selectedMilkHandler(event: any){
-    this.selectedMilk = event.target.value;
-    console.log(this.selectedMilk);
-  }
+  getMilkOptions() {return this.milkTypes;}
+  getFlavorOptions() {return this.flavors;}
+  getSizeOptions() {return this.sizes;}
 
-  selectedFlavorsHandler(event: any){
-    this.selectedFlavors = event.target.value;
-    console.log(this.selectedFlavors);
-  }
-
-  selectedToppingsHandler(event: any){
-    this.selectedToppings = event.target.value;
-    console.log(this.selectedToppings);
-  }
-
-  order(){
-    console.log("button clicked");
-    this.router.navigate(['/order-complete'])
-  }
-
-  goToOrder(){
-    //this.router.navigate(['']);
+  addToCart() {
+    this.selectedFlavorsHandler();
+    this.miscCustomizationsHandler();
+    console.log(this.customDrink);
   }
 
 }

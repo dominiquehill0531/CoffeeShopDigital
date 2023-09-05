@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { NgxStripeModule, STRIPE_PUBLISHABLE_KEY } from 'ngx-stripe';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -19,7 +20,6 @@ import { MatTableModule } from '@angular/material/table';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RatingModule } from 'ng-starrating';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -75,8 +75,7 @@ import { CartPageComponent } from './cart-page/cart-page.component';
     MatBadgeModule,
     MatSnackBarModule,
     BrowserAnimationsModule,
-    RatingModule,
-
+    NgxStripeModule.forRoot(`${STRIPE_PUBLISHABLE_KEY}`)
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

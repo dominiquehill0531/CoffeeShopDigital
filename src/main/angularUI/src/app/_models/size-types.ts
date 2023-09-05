@@ -2,8 +2,8 @@ export class SizeTypes {
     name: string;
     addPrice: number;
     static sizeList: SizeTypes[] = [
-        {name: 'Classic', addPrice: 0.00},
-        {name: 'Medium', addPrice: 0.50},
+        {name: 'Traditional', addPrice: 0.00},
+        {name: 'American', addPrice: 0.50},
         {name: 'Large', addPrice: 0.75}
     ];
 

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DrinkService } from '../_services/drink.service';
-import { Drink } from '../models/Drink';
+import { Drink } from '../_models/Drink';
 import { ActivatedRoute } from '@angular/router';
-import { DrinkTypes } from '../models/drink-types';
+import { DrinkTypes } from '../_models/drink-types';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +12,7 @@ import { DrinkTypes } from '../models/drink-types';
 export class HomeComponent implements OnInit {
 
   drinkTypes: DrinkTypes[] = [];
+  
   constructor(private drinkService:DrinkService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -21,6 +22,10 @@ export class HomeComponent implements OnInit {
       else
       this.drinkTypes = this.drinkService.getAll();
     })
+  }
+
+  chooseProtoDrink(drinkType: DrinkTypes): void {
+    sessionStorage.setItem("protoDrink", drinkType.name);
   }
 
 }

@@ -1,83 +1,103 @@
-<body>
-<!--    <div class="background">-->
+<body><div class="container custom-bg-filter">
+<!--TODO: Create div class container and another div class container hidden for cart display-->
+    <div class="customization">
+        <img src="{{ customDrink.imageUrl }}" title="drinkType" id="drink-img"/>
+        <p>Customize your {{ customDrink.getName() }}!</p>
+    </div>
+    
+    <form
+      #customDrinkForm="ngForm"
+      (ngSubmit)="customDrinkForm.form.valid; addToCart(); customDrinkForm.reset()"
+    >
 
-        <div class="coffee-cup">
-            <!-- add code to display the selected drink -->
-            <img src="{{ selectedDrink?.imageUrl }}">
-            <p>{{ selectedDrink?.name }}</p>
-        </div>
-        <div class="row">
-            <div class="column">
-                <div class="customization">
-                    <p>Add Customizations:</p>
-                    <div class="align">
-                        <label for="milk">Milk</label>
-                        <select name="milk" (change)="selectedMilkHandler($event)" id="milk">
-                            <option *ngFor="let milk of milkTypes" [value]="milk.name" >{{milk.name}}</option>
-                        </select>
-                    </div>
+        <label>Choose Milk
+            <div class="form-group">
+                <select 
+                  class="form-select" name="milkChoice" id="milkChoice"
+                  [(ngModel)]="customDrink.milkChoice" required
+                >
+                    <option *ngFor="let milk of getMilkOptions()" [value]="milk" >{{ milk.name }}</option>
+                </select>
+            </div>  
+        </label>
+        
+        <label class="form-group">Choose Your Flavors<br />
+            <ng-container *ngFor="let flavor of getFlavorOptions()">
+                <label class="form-check-label">{{ flavor.name }}
+                    <input 
+                        class="form-control form-check-input" type="checkbox" value="true" id="{{ flavor.name }}"
+                        [(ngModel)]="flavor.isChosen" name="flavorList"
+                    />
+                </label><br />
+            </ng-container>
+        </label>
 
-                    <label>Flavors<div>
-                        <div *ngFor="let flavor of flavors">
-                            <label>{{ flavor.name }}
-                                <input  type="checkbox" name="flavor"
-                                        value="{{ flavor.name }}" />
-                            </label>
-                        </div>
-                        
-                    </div></label>
-                    
-                    <div class="align">
-                        <label for="topping">Toppings</label>
-                        <select name="topping" (change)="selectedToppingsHandler($event)" id="topping">
-                            <option *ngFor="let topping of toppings" >{{topping.name}}</option>
-                        </select>
-                    </div>
+        <label for="cups-container container">Select a Size
+        <div class="cup-align" id="cups-container">
+        
+            <label class="form-check form-check-label">Traditional (up to 12 oz)
+                <div>
+                    <input 
+                        class="form-check-input" type="radio"  id="tradSize"
+                        name="drinkSize" [(ngModel)]="customDrink.size" value="{{ getSizeOptions()[0] }}" required
+                    />
+                    <img src="../../assets/images/smallCup.png" id="smallCup"/>
+                </div>                 
+            </label>
+        
+            <label class="form-check form-check-label">American (16 oz)
+                <div>
+                    <input
+                    type="radio" name="drinkSize" id="amSize" value="{{ getSizeOptions()[1] }}"
+                    name="drinkSize" [(ngModel)]="customDrink.size" required class="form-check-input"
+                    />
+                    <img src="../../assets/images/smallCup.png" id="medCup"/>
                 </div>
-            </div>
-            <div class="column">
-                <div class="customization">
-                    <p>Select a Size:</p>
-                    <div class="cup">
-                        <div class="smallCup">
-                            <img src="../../assets/images/smallCup.png">
-                        </div>
-                        <div>Small
-                            <label>
-                                <input
-                                  type="radio" name="item-1-checkbox" (click)="updateSize('small')"
-                                  id="small" value="small">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="cup">
-                        <div class="medCup">
-                            <img src="../../assets/images/smallCup.png">
-                        </div>
-                        <div>Medium
-                            <label>
-                                <input
-                                  type="radio" name="item-1-checkbox" (click)="updateSize('Medium')"
-                                  id="medium" value="medium">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="cup">
-                        <div class="largeCup">
-                            <img src="../../assets/images/smallCup.png">
-                        </div>
-                        <div>Large
-                            <label>
-                                <input
-                                  type="radio" name="item-1-checkbox" (click)="updateSize('Large')"
-                                  id="large" value="large">
-                            </label>
-                        </div>
-                    </div>
+            </label>                   
+                
+            <label class="form-check form-check-label">Large (20 oz)
+                <div>
+                    <input
+                        type="radio" name="drinkSize"id="lrgSize" value="{{ getSizeOptions()[2] }}"
+                        name="drinkSize" [(ngModel)]="customDrink.size" required class="form-check-input"
+                    />
+                    <img src="../../assets/images/smallCup.png" id="largeCup">
                 </div>
-            </div>
+            </label>
+        
         </div>
-<!--    </div>-->
-        <button (click)="goToOrder()">Order Now</button>
+        </label>
+        
+        <label class="form-check-label">Want it Iced?
+            <div>
+                <input
+                  type="checkbox" class="form-control form-check-input" id="isIced"
+                  name="isIced" value=true
+                >
+            </div>
+        </label><br />
 
-</body>
+        <label class="form-check-label">Want it Decaf?
+            <div>
+                <input
+                  type="checkbox" class="form-control form-check-input" id="isDecaf"
+                  name="isDecaf" value=true
+                >
+            </div>
+        </label><br />
+
+        <label class="form-check-label">Need a Splash of Milk?
+            <div>
+                <input
+                  type="checkbox" class="form-control form-check-input" id="milkSplash"
+                  name="milkSplash" value=true
+                >
+            </div>
+        </label><br /><br />
+
+        <button type="submit" class="btn btn-success btn-lg">Add to Cart</button>
+    </form>
+
+    
+
+</div></body>
