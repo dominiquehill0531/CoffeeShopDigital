@@ -1,9 +1,8 @@
-import { Component, KeyValueDiffers, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from '../_models/user';
 import { ERole } from '../_models/erole'
 import { UserService } from '../_services/user.service';
 import { TokenStorageService } from '../_services/token-storage.service';
-import { KeyValuePipe } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 

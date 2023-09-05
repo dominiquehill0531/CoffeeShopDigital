@@ -22,4 +22,7 @@ export abstract class Purchasable {
     setQuantity(newQty: number) {
         this.quantity = newQty;
     }
+
+    getName(): any { return this.name; }
+    getImage(): any { return this.imageUrl; }
 }

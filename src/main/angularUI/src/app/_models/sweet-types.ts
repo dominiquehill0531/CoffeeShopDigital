@@ -4,6 +4,7 @@ export class SweetTypes {
     name!: string;
     addPrice!: number;
     imageUrl?: string;
+    isChosen?: boolean = false;
 
     static sweetTypesList: SweetTypes[] = [
         // TODO: Add SwtTypes imgs
@@ -24,5 +25,6 @@ export class SweetTypes {
         this.addPrice = addToPrice;
         this.imageUrl = image;
         SweetTypes.sweetTypesList.push(this);
+        SweetTypes.nextId++;
     }
 }

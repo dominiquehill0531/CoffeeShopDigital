@@ -1,127 +1,32 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+.custom-bg-filter {
+    background-color: bisque;
 }
 
-/* .background::before{
-    content: '';
-    background-image:url("../../../src/assets/images/christina-rumpf-LMzwJDu6hTE-unsplash.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    opacity: 0.2;
-} */
-
-
-img {
-    padding: 20px;
-    width: 150px;
-    height: 150px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 50%;
-}
-
-.helloname {
-    position: absolute;
-    top:5%;
-    right: 135px;
-    margin-right: 10px; 
-    transform: translateY(-50%);
-    font-weight: bold;
-    color:teal;
-    font-size: 28px;
-}
-
-.logout {
-    position: absolute;
-    top:5%;
-    right: 40px;
-    margin-right: 10px; 
-    transform: translateY(-50%);
-    font-weight: bold;
-    color:teal;
-    font-size: 20px;
-}
-
-.logout button{
-    height: 30px;
-    width: 10%;
-    border-radius: 40px;
-}
-
-.cart-icon {
-    position: absolute;
-    top:5%;
-    right: 250px;
-    margin-right: 30px; 
-    transform: translateY(-50%);
-    height: 80px;
-    width: 80px;
-}
-
-.coffee-cup img{
-    float:left;
-    margin-left: 30px;
-    height: 120px;
-    width: 120px;
-}
-
-.coffee-cup p {
-    margin-left: 200px;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 150%;
-    padding-top: 30px;
-}
-
-.customization p {
-    margin-top: 8%;
+p {
     font-weight: 800;
-}
-
-.customization select {
-    margin-left: 10px;
-    width: auto;
-    
-}
-
-.align{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    text-align: right;
-    width: 25%;
-    line-height: 26px;
-    margin-bottom: 10px;
 }
 
 select{
     height: 20px;
-    width: 20px;
+    width: auto;
     flex: 0 0 150px;
-    /* margin-left: 10px; */
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+
+.cup-align {
+    display: flex;
+    flex-direction: column;
 }
 
 .column {
-    flex: 50%;
+    flex-direction: column;
 }
 
 .row {
     display: flex;
-}
-
-.column img{
-    height: 30%;
-    width: 20%;
-    
+    flex-direction: row;
 }
 
 .submit{
@@ -147,11 +52,6 @@ select{
 	text-shadow: none;
 }
 
-.itemtext2{
-    margin-left: 30px; 
-    padding: 0;   
-}
-
 .smallImg{
     margin-left: 0;
     margin-top: 0;
@@ -159,26 +59,27 @@ select{
     
 }
 
-.cup div{
-    float: left;
-    margin-top: 7%;
+#drink-img {
+    padding: 20px;
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
 }
 
-.smallCup img{
-    float: left;
-    height: 80px;
-    width: 80px;
-    margin-top: 8px;
+#largeCup {
+    height: 120px;
+    width: 120px;
 }
 
-.medCup img{
-    float: left;
+#medCup {
     height: 100px;
     width: 100px;
 }
 
-.largeCup img{
-    float: left;
-    height: 120px;
-    width: 120px;
+#smallCup {
+    height: 80px;
+    width: 80px;
 }

@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MilkTypes } from '../_models/milk-types';
 import { DrinkTypes } from '../_models/drink-types';
-import { Flavors } from '../_models/flavors';
 import { Toppings } from '../_models/toppings';
+import { SweetTypes } from '../_models/sweet-types';
 
 @Injectable({
   providedIn: 'root'
@@ -29,8 +29,8 @@ export class MenuService {
     return this.http.get<DrinkTypes>(`${this.baseUrl}`, {params: queryPramas}); 
   }
 
-  getFlavors(): Observable<Flavors[]> {
-    return this.http.get<Flavors[]>(`${this.baseUrl}/flavors`);
+  getFlavors(): Observable<SweetTypes[]> {
+    return this.http.get<SweetTypes[]>(`${this.baseUrl}/flavors`);
   }
 
   getToppings(): Observable<Toppings[]> {
